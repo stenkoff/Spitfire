@@ -17,13 +17,14 @@ title       | string    | not null
 track_url   | string    | not null
 artist_id   | integer   | not null, foreign key (references artists), indexed
 album_id    | integer   | not null, foreign key (references albums), indexed
+ord         | integer   |
 
 ## artists
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null
-image_url   | string    | not null
+image_url   | string    |
 
 ## albums
 column name | data type | details
@@ -31,7 +32,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 name        | string    | not null
 artist_id   | integer   | not null, foreign key (references artists), indexed
-image_url   | string    | not null
+image_url   | string    |
 
 ## playlisting
 column name | data type | details
@@ -39,6 +40,8 @@ column name | data type | details
 id          | integer   | not null, primary key
 track_id    | integer   | not null, foreign key (references tracks), indexed
 playlist_id | integer   | not null, foreign key (references artists), indexed
+ord         | integer   | not null
+image_url   | string    |
 
 ## playlists
 column name | data type | details
@@ -46,4 +49,25 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 user_id     | integer   | not null, foreign key (references users)
-image_url   | string    | not null
+image_url   | string    |
+
+## user_follows
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+follower_id | integer   | not null, foreign key (references users)
+followed_id | integer   | not null, foreign key (references users)
+
+## playlist_follows
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key
+playlist_id | integer   | not null, foreign key (references playlists)
+
+## artist_follows
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key (references users)
+artist_id   | integer   | not null, foreign key (references artists)

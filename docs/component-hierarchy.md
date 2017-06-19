@@ -22,11 +22,7 @@
 
 **SearchContainer**
   - Search
-  - ArtistSearchResult
-  - TrackSearchResult
-  - AlbumSearchResult
-  - PlaylistSearchResult
-
+  
 **AddToPlaylistContainer**
   - AddToPlaylist
 
