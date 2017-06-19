@@ -1,8 +1,4 @@
-# PRESSPLAY
-
-[Herokulink][heroku]
-
-[myproject]
+# PressPlay
 
 Minimum Viable Product
 

@@ -14,7 +14,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
-song_url         | string    | not null
+song_url    | string    | not null
 artist_id   | integer   | not null, foreign key (references artists), indexed
 album_id    | integer   | not null, foreign key (references albums), indexed
 
@@ -31,14 +31,14 @@ id          | integer   | not null, primary key
 name        | string    | not null
 artist_id   | integer   | not null, foreign key (references artists), indexed
 
-## play
+## plays
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 song_id     | integer   | not null, foreign key (references songs), indexed
 playlist_id | integer   | not null, foreign key (references artists), indexed
 
-## playlist
+## playlists
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
