@@ -11,7 +11,7 @@
 ### Users
 
 - `POST /api/users`
-- `PATCH /api/users`
+- `PATCH /api/users/:id`
 
 ### Session
 
@@ -26,17 +26,8 @@
 - `PATCH /api/playlists/:id`
 - `DELETE /api/playlists/:id`
 
-### Songs
-
-- `GET /api/songs`
-- `GET /api/songs/:id`
-
 ### Albums
-
-- `GET /api/albums`
 - `GET /api/albums/:id`
 
 ### Artists
-
-- `GET /api/artists`
 - `GET /api/artists/:id`

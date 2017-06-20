@@ -15,7 +15,6 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 track_url   | string    | not null
-artist_id   | integer   | not null, foreign key (references artists), indexed
 album_id    | integer   | not null, foreign key (references albums), indexed
 ord         | integer   |
 
@@ -41,7 +40,6 @@ id          | integer   | not null, primary key
 track_id    | integer   | not null, foreign key (references tracks), indexed
 playlist_id | integer   | not null, foreign key (references artists), indexed
 ord         | integer   | not null
-image_url   | string    |
 
 ## playlists
 column name | data type | details

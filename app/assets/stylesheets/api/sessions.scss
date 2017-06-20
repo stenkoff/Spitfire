@@ -1,3 +1,114 @@
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1, h2, h3, p, label, input, div, section, ul, li, input:focus, button {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: none;
+}
+.sess {
+  display: flex;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  background-color: black;
+  padding: 13%;
+  margin: auto;
+  align-items: center;
+  // justify-content: center;
+}
+
+.session {
+  padding-right: 45px;
+  min-width: 300px;
+  border-right: 1px solid white;
+
+}
+.session h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 40px;
+
+}
+
+.sessionForm {
+  display: flex;
+  flex-direction: column;
+}
+
+label.formItem {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid white;
+  font-size: 12px;
+  color: grey;
+  margin-top: 16px;
+}
+
+.formItem input {
+  background-color: transparent;
+  font-size: 13px;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+div.formItem {
+  text-align: middle;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.formItem button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 3%;
+  vertical-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.features {
+  padding: 45px;
+  min-width: 585px;
+}
+
+.features h1 {
+  font-size: 60px;
+  color: #07d159;
+  font-weight: bold;
+}
+
+.features h2 {
+  font-size: 28px;
+  font-weight: 100;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.features h3 {
+  font-size: 16px;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+a.newSession {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  margin: auto;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+a.newSession:hover {
+  text-decoration: underline;
+}
+
+html {
+  background-color: black;
+}
