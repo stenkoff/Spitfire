@@ -23,17 +23,18 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stenkoff/Fullstack.git"
+    "url": "git+https://github.com/stenkoff/Spitfire.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/stenkoff/Fullstack/issues"
+    "url": "https://github.com/stenkoff/Spitfire/issues"
   },
-  "homepage": "https://github.com/stenkoff/Fullstack#readme"
+  "homepage": "https://github.com/stenkoff/Spitfire#readme"
 }
