@@ -8,7 +8,7 @@ const Auth = ({component: Component, path, loggedIn}) => {
     !loggedIn ? (
       <Component {...props} />
     ) : (
-      <Redirect to="/signup" />
+      <Redirect to="/" />
     )
   )}/>
 );

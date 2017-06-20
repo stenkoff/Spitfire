@@ -28,7 +28,6 @@
 }
 
 .playbar {
-  border: 1px solid blue;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -36,4 +35,5 @@
   height: 100px;
   margin-top: 1px;
   z-index: 100;
+  background-color: #282828;
 }
