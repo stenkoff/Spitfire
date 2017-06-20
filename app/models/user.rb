@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
 	validates :password, length: {minimum: 6}, allow_nil: :true
   after_initialize :ensure_session_token
 
+  # belongs_to playlist, user_follows
+  # has_many user_follows, playlist_follows, artist_follows, album_follows
+
 	def self.find_by_credentials(username, password)
 		user = User.find_by(username: username)
 		user && user.is_password?(password) ? user : nil
