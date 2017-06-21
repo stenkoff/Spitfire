@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleChange(field) {
@@ -23,8 +24,21 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-    // .then(data => this.props.history.push('/'));
   }
+
+	renderErrors() {
+			return (
+				this.props.errors.map((err, i)=> (
+				<li key={i}>
+					{err}
+				</li>))
+		);
+	}
+
+	componentDidMount(nextProps) {
+		this.props.clearErrors();
+	}
+
   render() {
     const formType = this.props.formType === '/login' ? 'LOGIN' : 'SIGN UP';
 		const form2 = this.props.formType === '/login' ?  "Don't have an account? Sign up here!" : 'Already have an account? Log in here.';
@@ -38,19 +52,23 @@ class SessionForm extends React.Component {
         <form className='sessionForm'>
           <label className='formItem'>Username
             <input onChange={this.handleChange('username')}
-              value={this.state.username} />
+							value={this.state.username} />
           </label>
-					
+
           <label className='formItem'>Password
             <input onChange={this.handleChange('password')}
               value={this.state.password} />
           </label>
+
 
 					<div className='formItem' >
 	          <button onClick={e => this.handleSubmit(e)}>{formType}</button>
 					</div>
 					<Link to={`${url}`} className='newSession'>{form2}</Link>
         </form>
+				<div className='errors'>
+					<ul>{this.renderErrors()}</ul>
+				</div>
       </section>
 
 			<section className='features'>
@@ -65,4 +83,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
