@@ -7,7 +7,7 @@ export const receivePlaylists = playlists => ({
   playlists
 });
 
-export const fetchPlaylists = user => dispatch => {
+export const fetchPlaylistsForUser = (user) => dispatch => {
   return APIUtil.fetchPlaylists(user)
-    .then(playlists => dispatch(receivePlaylists(playlists)));
+    .then(user => dispatch(receivePlaylists(user)));
 };

@@ -1,4 +1,7 @@
-json.extract! user, :id, :username
+json.user do
+  json.extract! user, :id, :username
+  json.playlist_ids user.playlists.pluck(:id)
+end
 
 json.playlists do
   user.playlists.each do |playlist|
