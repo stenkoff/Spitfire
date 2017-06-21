@@ -8,10 +8,10 @@ const App = () => {
   return (
     <div>
     <section>
-      <ProtectedRoute exact path="/" component={HomeContainer} />
+      <ProtectedRoute path="/" component={HomeContainer} />
     </section>
-    <AuthRoute exact path="/login" component={SessionFormContainer} />
-    <AuthRoute exact path="/signup" component={SessionFormContainer} />
+    <AuthRoute path="/login" component={SessionFormContainer} />
+    <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>
 );
 };

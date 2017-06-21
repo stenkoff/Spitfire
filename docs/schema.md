@@ -42,7 +42,7 @@ ord         | integer   | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-title       | string    | not null
+name       | string    | not null
 user_id     | integer   | not null, foreign key (references users)
 
 ## user_follows

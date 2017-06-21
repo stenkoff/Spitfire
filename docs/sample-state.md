@@ -8,23 +8,19 @@
     },
   },
 
-  {
-    currentSong: {
+  tracks {
+    1: {
       id: 1,
       title: 'title',
-      url: 'url',
-      artist_id: 1,
       album_id: 1
     }
   },
 
-  {
-    playlists: {
-      1: {
-        id: 1,
-        name: 'name',
-        songs: [1,2]
-      }
+  playlists: {
+    1: {
+      id: 1,
+      name: 'name',
+      tracks: [1,2]
     }
   },
 
@@ -32,7 +28,15 @@
     1: {
       id: 1,
       name: 'name',
-      songs: []
+      tracks: [1,2,3]
+    }
+  }
+
+  albums: {
+    1: {
+      id: 1,
+      title: 'title',
+      tracks: [1,2,3]
     }
   }
 }
