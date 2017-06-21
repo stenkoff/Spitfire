@@ -12,21 +12,25 @@ class Home extends React.Component   {
     if (this.props.currentUser) {
       return (
         <section className='home'>
-          <div className='username'>
-            <p> {this.props.currentUser.username} </p>
-            <div>
-              <button className='logout' onClick={this.props.logout}>Log Out</button>
+
+          <div className='sidebar'>
+
+            <div className='sidebar-top'>
+              <h1>Search</h1>
+              <h2>Browse</h2>
+              <h3>Your Music</h3>
             </div>
+
+            <div className='sidebar-bottom'>
+              <p> {this.props.currentUser.username} </p>
+              <button  onClick={this.props.logout}>Log Out</button>
+            </div>
+
           </div>
 
-          <div>
-
-            <p className='playlists' >Playlists</p>
-          </div>
-
-        <footer className='playbar'>
+        <div className='playbar'>
           <h1>play</h1>
-        </footer>
+        </div>
 
       </section>
       );

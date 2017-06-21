@@ -8,7 +8,6 @@ const PlaylistsReducer = (state = {}, action) => {
     case RECEIVE_CURRENT_USER:
       return merge({}, state, action.playlists);
     case RECEIVE_PLAYLISTS:
-    debugger
       return action.user.playlists
     default:
       return state;

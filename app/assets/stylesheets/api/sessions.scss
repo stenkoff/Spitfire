@@ -16,6 +16,8 @@ h1, h2, h3, p, label, input, div, section, ul, li, input:focus, button {
   padding: 13%;
   margin: auto;
   align-items: center;
+  // justify-content: space-around;
+  height: 100vh;
   // height: 100%;
   // justify-content: center;
 }
@@ -123,5 +125,5 @@ a.newSession:hover {
 //   background-color: black;
 // }
 html {
-  background: black;
+  // background: black;
 }
