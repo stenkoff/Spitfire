@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import SessionFormContainer from '../session_form/session_form_container';
 
 class Home extends React.Component   {
@@ -23,13 +23,13 @@ class Home extends React.Component   {
           <h1>play</h1>
         </footer>
       </div>
-
       );
     } else {
       return (
-        <div>
-
-        </div>
+        <section>
+          <Link to="/login">Log In</Link>
+          <Link to="/signup">Sign Up</Link>
+        </section>
       );
     }
   }

@@ -55,6 +55,9 @@ label.formItem {
   padding-bottom: 5px;
 }
 
+::-webkit-input-placeholder {
+  color: white;
+}
 div.formItem {
   text-align: middle;
   display: flex;
