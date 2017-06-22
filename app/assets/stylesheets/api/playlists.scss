@@ -1,3 +1,70 @@
 // Place all the styles related to the Api::Playlists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main {
+  // background-color: blue;
+  width: 100%;
+
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-around;
+  // width: 100%;
+  // padding-left: 220px;
+  background-image: linear-gradient(rgb(64, 73, 89), rgb(6, 7, 8) 85%)
+}
+
+.playlist-item {
+  // border: 1px solid blue;
+  // background-color: purple;
+  // padding: 5%;
+}
+
+.music-bar, .playlist {
+  display: flex;
+  width: 100vw;
+  // border: 2px solid blue;
+  // color: white;
+  justify-content: center;
+  width: 100%;
+}
+
+.music-bar li {
+  margin: 37px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  // font-weight: 500;
+  &:hover {
+    color: white;
+  }
+}
+.playlist li {
+  margin: 30px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.new-playlist {
+  // border: 1px solid red;
+  width: 100;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.new-playlist button {
+  background-color: #1db954;
+  letter-spacing: 2px;
+  color: white;
+  padding: 9px 22px;;
+  border-radius: 20px;
+  font-size: 11px;
+  min-width: 130px;
+  &:hover {
+    padding: 10px 23px;
+    transition: .15s ease;
+    background-color: #1ed660;
+    color: white;
+  }
+}

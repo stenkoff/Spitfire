@@ -6,10 +6,22 @@ class Playlists extends React.Component {
   }
 
   render() {
-    const playlists = this.props.playlists.map(playlist => <li className='playlists'>{playlist.name}</li>)
+    const playlists = this.props.playlists.map(playlist =>
+      <li className='playlist-item'>
+        <h1>{playlist.name}</h1>
+        <h2>Creator</h2>
+      </li>)
     return (
-      <section>
-        <ul>{playlists}</ul>
+      <section  className='main'>
+        <ul className='music-bar'>
+          <li>PLAYLISTS</li>
+          <li>ARTISTS</li>
+          <li>ALBUMS</li>
+        </ul>
+        <div className='new-playlist'>
+          <button>NEW PLAYLIST</button>
+        </div>
+        <ul className='playlist'>{playlists}</ul>
       </section>
     );
   }

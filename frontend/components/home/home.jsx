@@ -16,7 +16,7 @@ class Home extends React.Component   {
           <div className='sidebar'>
 
             <ul className='sidebar-top'>
-              <li id='logo'></li>
+              <li id='logo'>Spitfire</li>
               <li id='search'>Search</li>
               <li id='line'></li>
               <li id='browse'>Browse</li>
@@ -24,8 +24,7 @@ class Home extends React.Component   {
             </ul>
 
             <section className='sidebar-bottom'>
-              <div id='user' className='bottom'> {this.props.currentUser.username}
-              </div>
+              <div id='user' className='bottom'> {this.props.currentUser.username}</div>
               <div>
                 <button  className='bottom' onClick={this.props.logout}>Log Out</button>
               </div>
@@ -37,6 +36,7 @@ class Home extends React.Component   {
           <h1></h1>
         </div>
 
+          <PlaylistsContainer />
       </section>
       );
     } else {
