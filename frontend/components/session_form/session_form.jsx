@@ -46,6 +46,7 @@ class SessionForm extends React.Component {
 
     return (
 			<section className='sess'>
+				<div className='session-wrap'>
       <section className='session'>
 				<h1>Spitfire</h1>
 
@@ -80,6 +81,7 @@ class SessionForm extends React.Component {
 				<h3>✓ &nbsp;&nbsp; Search & discover music you'll love</h3>
 				<h3>✓ &nbsp;&nbsp; Create playlists of your favorite music</h3>
 			</section>
+			</div>
 		</section>
     );
   }

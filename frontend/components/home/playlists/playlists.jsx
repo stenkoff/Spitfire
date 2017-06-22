@@ -9,7 +9,7 @@ class Playlists extends React.Component {
     const playlists = this.props.playlists.map(playlist =>
       <li className='playlist-item'>
         <h1>{playlist.name}</h1>
-        <h2>Creator</h2>
+        <h2 className='creator'>{playlist.creator}</h2>
       </li>)
     return (
       <section  className='main'>

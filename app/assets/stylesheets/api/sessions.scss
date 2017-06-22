@@ -16,17 +16,29 @@ h1, h2, h3, p, label, input, div, section, ul, li, input:focus, button {
   padding: 13%;
   margin: auto;
   align-items: center;
-  // justify-content: space-around;
-  height: 100vh;
+  justify-content: center;
+  // height: 100%;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   // height: 100%;
   // justify-content: center;
+}
+
+.session-wrap {
+  display: flex;
 }
 
 .session {
   padding-right: 45px;
   min-width: 300px;
-  border-right: 1px solid white;
+  margin-left: 70px;
 
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
 }
 .session h1 {
   text-align: center;
@@ -81,6 +93,7 @@ div.formItem {
 .features {
   padding: 45px;
   min-width: 585px;
+  border-left: 1px solid white;
 }
 
 .features h1 {
@@ -125,5 +138,5 @@ a.newSession:hover {
 //   background-color: black;
 // }
 html {
-  // background: black;
+// height: 100%;
 }
