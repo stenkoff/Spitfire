@@ -1,9 +1,12 @@
-json.extract! @playlist, :id, :name, :user
-@playlist.playlistings do |playlisting|
-  json.set! playlisting.ord do
-    json.playlist_ord playlisting.ord
-    json.title playlisting.track.title
-    # json.album
-    # json.artist
+json.playlist do
+  json.extract! @playlist, :id, :name, :user
+  json.track_ids @playlist.tracks.pluck(:id)
+end
+
+json.tracks do
+  @playlist.tracks.each do |track|
+    json.set! track.id do
+      json.extract! track, :title
+    end
   end
 end

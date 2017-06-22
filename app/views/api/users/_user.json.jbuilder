@@ -8,6 +8,7 @@ json.playlists do
     json.set! playlist.id do
       json.extract! playlist, :id, :name, :user_id
       json.creator playlist.user.username
+      json.image_url asset_path(playlist.image.url)
     end
   end
 end

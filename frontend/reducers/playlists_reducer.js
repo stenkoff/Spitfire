@@ -1,4 +1,4 @@
-import { RECEIVE_PLAYLISTS } from '../actions/playlist_actions';
+import { RECEIVE_PLAYLISTS, RECEIVE_PLAYLIST } from '../actions/playlist_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
@@ -9,6 +9,8 @@ const PlaylistsReducer = (state = {}, action) => {
       return merge({}, state, action.playlists);
     case RECEIVE_PLAYLISTS:
       return action.user.playlists
+    case RECEIVE_PLAYLIST:
+      return merge({}, state, { [action.playlist.id]: action.playlist} )
     default:
       return state;
   }

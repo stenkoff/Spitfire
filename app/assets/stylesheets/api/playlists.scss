@@ -3,19 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .main {
-  // background-color: blue;
   width: 100%;
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-around;
-  // width: 100%;
-  // padding-left: 220px;
   background-image: linear-gradient(rgb(64, 73, 89), rgb(6, 7, 8) 85%)
-  // background-color: black;
 }
 
-
-.music-bar, .playlist {
+.music-bar {
   display: flex;
   width: 100vw;
   justify-content: center;
@@ -30,15 +22,7 @@
     color: white;
   }
 }
-.playlist li {
-  margin: 30px;
-  font-size: 14px;
-  text-align: center;
-}
 
-.creator {
-  font-size: 10;
-}
 .new-playlist {
   width: 100;
   display: flex;
@@ -60,5 +44,51 @@
     transition: .15s ease;
     background-color: #1ed660;
     color: white;
+  }
+}
+
+.playlist-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 15px;
+  margin-top: 50px;
+}
+
+.playlist-item {
+  margin: 10px;
+  text-align: center;
+}
+
+.playlist-item h1 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #fff;
+
+}
+.playlist-item h2 {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.playlist-image {
+  object-fit: cover;
+  height: 250px;
+  width: auto;
+}
+
+@media only screen and (max-width: 1065px) {
+  .playlist-image {
+    height: 225px;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .playlist-image {
+    height: 200px;
+    width: auto;
   }
 }
