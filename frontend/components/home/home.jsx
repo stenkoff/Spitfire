@@ -15,21 +15,26 @@ class Home extends React.Component   {
 
           <div className='sidebar'>
 
-            <div className='sidebar-top'>
-              <h1>Search</h1>
-              <h2>Browse</h2>
-              <h3>Your Music</h3>
-            </div>
+            <ul className='sidebar-top'>
+              <li id='logo'></li>
+              <li id='search'>Search</li>
+              <li id='line'></li>
+              <li id='browse'>Browse</li>
+              <li id='music'>Your Music</li>
+            </ul>
 
-            <div className='sidebar-bottom'>
-              <p> {this.props.currentUser.username} </p>
-              <button  onClick={this.props.logout}>Log Out</button>
-            </div>
+            <section className='sidebar-bottom'>
+              <div id='user' className='bottom'> {this.props.currentUser.username}
+              </div>
+              <div>
+                <button  className='bottom' onClick={this.props.logout}>Log Out</button>
+              </div>
+            </section>
 
           </div>
 
         <div className='playbar'>
-          <h1>play</h1>
+          <h1></h1>
         </div>
 
       </section>
