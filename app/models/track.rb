@@ -5,4 +5,6 @@ class Track < ActiveRecord::Base
   belongs_to :album
   has_many :playlistings
   has_many :playlists, through: :playlistings
+  has_one :artist, through: :album
+
 end

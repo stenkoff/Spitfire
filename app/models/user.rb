@@ -7,7 +7,14 @@ class User < ActiveRecord::Base
 
 
   has_many :playlists #user_follows
+  has_many :tracks, through: :playlists
+  has_many :albums, through: :tracks;
   # has_many user_follows, playlist_follows, artist_follows, album_follows
+  # user
+  # playlist
+  # playlisting
+  # tracks
+  # albums
 
 	def self.find_by_credentials(username, password)
 		user = User.find_by(username: username)

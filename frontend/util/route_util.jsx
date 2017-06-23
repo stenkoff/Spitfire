@@ -2,21 +2,21 @@ import React from 'react';
 import { Route, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const Auth = ({component: Component, path, loggedIn}) => {
+const Auth = ({component: Component, path, loggedIn, exact}) => {
   return (
-  <Route exact path={path} render={(props) => (
+  <Route exact={exact} path={path} render={(props) => (
     !loggedIn ? (
       <Component {...props} />
     ) : (
-      <Redirect to="/" />
+      <Redirect to="/playlists" />
     )
   )}/>
 );
 };
 
-const Protected = ({component: Component, path, loggedIn}) => {
+const Protected = ({component: Component, path, loggedIn, exact}) => {
   return (
-    <Route exact path={path} render={(props) => {
+    <Route exact={exact} path={path} render={(props) => {
       let component;
       if (loggedIn) {
         component = <Component {...props}/>

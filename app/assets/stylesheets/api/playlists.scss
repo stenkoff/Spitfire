@@ -1,10 +1,15 @@
 // Place all the styles related to the Api::Playlists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.albums {
+  color: black;
+}
 .main {
   width: 100%;
-  background-image: linear-gradient(rgb(64, 73, 89), rgb(6, 7, 8) 85%)
+  // background-image: linear-gradient(rgb(64, 73, 89), rgb(6, 7, 8) 8%);
+  display: flex;
+  flex-direction: column;
+
 }
 
 .music-bar {
@@ -68,6 +73,11 @@
   color: #fff;
 
 }
+.playlist-item a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .playlist-item h2 {
   margin-bottom: 5px;
   font-size: 12px;
@@ -91,4 +101,36 @@
     height: 200px;
     width: auto;
   }
+}
+
+.new-playlist-form {
+  border: 1px solid red;
+  background-color: black;
+  width: 100vw;
+  display: flex;
+  // flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+}
+.new-playlist-form h1 {
+  font-size: 48px;
+
+}
+
+.new-playlist-name {
+  border: 1px solid blue;
+  padding: 40px;
+
+}
+
+.new-playlist-name input {
+  background-color: black;
+  width: 100%;
+  font-size: 48px;
+  text-align: center;
+}
+
+.modal-buttons {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
