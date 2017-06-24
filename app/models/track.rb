@@ -7,4 +7,6 @@ class Track < ActiveRecord::Base
   has_many :playlists, through: :playlistings
   has_one :artist, through: :album
 
+  has_attached_file :audio
+  validates_attachment_content_type :audio, content_type: /\Aaudio\/.*\z/
 end

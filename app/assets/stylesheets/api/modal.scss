@@ -1,0 +1,85 @@
+
+.new-playlist-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 100%;
+}
+.new-playlist-form h1 {
+  font-size: 54px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  height: auto;
+  color: #fff;
+  margin: 30px 90px 30px 90px;
+  text-align: center;
+}
+
+.new-playlist-name {
+  background-color: #242424;
+  width: 100%;
+  height: 155px;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.new-playlist-name input {
+  background-color: inherit;
+  width: 100%;
+  font-size: 54px;
+  color: #fff;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  vertical-align: middle;
+
+}
+
+.modal-buttons {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 10px;
+
+}
+
+.new-playlist-name ::-webkit-input-placeholder {
+  color: #666666;
+}
+
+
+#m1, #m2 {
+  height: 45px;
+  width: 165px;
+  font-size: 16px;
+  border-radius: 35px;
+  padding: 13px 44px;
+  line-height: 1.3;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#m1 {
+  background: hsla(0,0%,9%,.7);
+  color: #fff;
+  box-shadow: inset 0 0 0 2px #a0a0a0;
+
+}
+
+#close-button {
+  background-color: transparent;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  color: white;
+  padding: 0;
+  font-size: 70px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 40px;
+}

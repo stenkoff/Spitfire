@@ -3,7 +3,7 @@
 .home {
    min-height:100%;
    position: relative;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Proxima Nova', sans-serif;
   color: #a0a0a0;
   display: flex;
   background-color: #181818;
@@ -75,7 +75,7 @@
 .sidebar-bottom {
   // padding-bottom: 60px;
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Proxima Nova', sans-serif;
   // bottom: 100px;
   // position: relative;
 }
@@ -87,7 +87,7 @@
   border-radius: 20px;
   padding: 3%;
   vertical-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Proxima Nova', sans-serif;
   font-size: 14px;
   width: 100%
 }
@@ -111,7 +111,7 @@
   height: 100px;
   z-index: 100;
   background-color: #282828;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   // left: 0px;
 }

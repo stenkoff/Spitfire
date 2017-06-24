@@ -24,13 +24,19 @@ class PlaylistShow extends React.Component {
           <div className='pl-info'>
           <h1>{this.props.playlist.name}</h1>
           <h1>{this.props.playlist.creator}</h1>
+
+
           </div>
         </div>
         <div className='pl-tracks'>
           <ol >
             {
               this.props.tracks.map(track =>
-                <li><div>{track.title}</div></li>)
+                <li><div>{track.title}</div>
+
+                <audio controls="controls" src={`${track.audio}`}>
+                  Play
+                </audio></li>)
               }
               <li><div>title</div></li>
               <li><div>title</div></li>

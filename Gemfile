@@ -11,6 +11,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 gem 'paperclip'
 gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'figaro'
+gem 'aws-sdk'
 
 group :development, :test do
   gem 'byebug'

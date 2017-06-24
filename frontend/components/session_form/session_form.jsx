@@ -11,7 +11,6 @@ class SessionForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleChange(field) {
@@ -52,17 +51,19 @@ class SessionForm extends React.Component {
 
         <form className='sessionForm'>
           <label className='formItem'>Username
-            <input onChange={this.handleChange('username')}
+            <input
+							onChange={this.handleChange('username')}
 							placeholder='Spitfire username'
 							value={this.state.username} />
           </label>
 
           <label className='formItem'>Password
-            <input onChange={this.handleChange('password')}
+            <input
+							type='password'
+							onChange={this.handleChange('password')}
 							placeholder='Password'
               value={this.state.password} />
           </label>
-
 
 					<div className='formItem' >
 	          <button onClick={e => this.handleSubmit(e)}>{formType}</button>

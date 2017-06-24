@@ -36,6 +36,14 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.4)
+    aws-sdk (2.10.3)
+      aws-sdk-resources (= 2.10.3)
+    aws-sdk-core (2.10.3)
+      aws-sigv4 (~> 1.0)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.10.3)
+      aws-sdk-core (= 2.10.3)
+    aws-sigv4 (1.0.0)
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -62,12 +70,15 @@ GEM
     execjs (2.7.0)
     faker (1.7.3)
       i18n (~> 0.5)
+    figaro (1.1.1)
+      thor (~> 0.14)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.4)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    jmespath (1.3.1)
     jquery-rails (4.3.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -173,12 +184,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   bcrypt
   better_errors
   binding_of_caller
   byebug
   coffee-rails (~> 4.1.0)
   faker (~> 1.6, >= 1.6.6)
+  figaro
   jbuilder (~> 2.0)
   jquery-rails
   paperclip
@@ -194,4 +207,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.14.6
+   1.15.1

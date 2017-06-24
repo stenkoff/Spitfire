@@ -35,3 +35,5 @@ Track.create(title: 'Since Way Back', ord: 19, album_id: 1)
 Track.create(title: 'Fake Lobe', ord: 20, album_id: 1)
 Track.create(title: 'Ice Melts', ord: 21, album_id: 1)
 Track.create(title: 'Do Not Disturb', ord: 22, album_id: 1)
+
+Track.create(title: 'Up Up & Away', album_id: 13, ord: 15)

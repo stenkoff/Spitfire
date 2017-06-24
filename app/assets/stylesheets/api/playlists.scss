@@ -4,6 +4,7 @@
 .albums {
   color: black;
 }
+
 .main {
   width: 100%;
   // background-image: linear-gradient(rgb(64, 73, 89), rgb(6, 7, 8) 8%);
@@ -101,36 +102,4 @@
     height: 200px;
     width: auto;
   }
-}
-
-.new-playlist-form {
-  border: 1px solid red;
-  background-color: black;
-  width: 100vw;
-  display: flex;
-  // flex-grow: 1;
-  flex-direction: column;
-  align-items: center;
-}
-.new-playlist-form h1 {
-  font-size: 48px;
-
-}
-
-.new-playlist-name {
-  border: 1px solid blue;
-  padding: 40px;
-
-}
-
-.new-playlist-name input {
-  background-color: black;
-  width: 100%;
-  font-size: 48px;
-  text-align: center;
-}
-
-.modal-buttons {
-  padding-top: 20px;
-  padding-bottom: 20px;
 }

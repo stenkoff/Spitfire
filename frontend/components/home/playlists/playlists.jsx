@@ -7,7 +7,7 @@ class Playlists extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isModalOpen: false,
+      modal: false,
       playlist: {
         name: ''
       }
@@ -24,22 +24,19 @@ class Playlists extends React.Component {
 
           <div className='new-playlist'>
             <button onClick={()=>this.openModal()}>NEW PLAYLIST</button>
-            <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-              <section className='new-playlist-form'>
-                <div>
-                  <h1>Create new playlist</h1>
-                </div>
+            <Modal className='new-playlist-form' isOpen={this.state.modal} onClose={() => this.closeModal()}>
+                <button id='close-button' onClick={() => this.closeModal()}>x</button>
+                <h1>Create new playlist</h1>
                 <label className='new-playlist-name'>
                   <input
                     onChange={this.handleChange('name')}
-      							placeholder='Start typying...'
+      							placeholder='Start typing...'
       							value={this.state.name} />
                 </label>
       					<div className='modal-buttons' >
-                  <button onClick={() => this.closeModal()}>CANCEL</button>
-      	          <button onClick={e => this.handleSubmit(e)}>CREATE</button>
+                  <button id='m1' onClick={() => this.closeModal()}>CANCEL</button>
+      	          <button id='m2' onClick={e => this.handleSubmit(e)}>CREATE</button>
       					</div>
-              </section>
             </Modal>
           </div>
 
@@ -59,11 +56,11 @@ class Playlists extends React.Component {
   }
 
   openModal() {
-    this.setState({ isModalOpen: true });
+    this.setState({ modal: true });
   }
 
   closeModal() {
-    this.setState({ isModalOpen: false });
+    this.setState({ modal: false });
   }
 
   handleChange(field) {

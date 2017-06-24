@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  // window.store = store;
-  // window.dispatch = store.dispatch;
+  window.store = store;
+  window.dispatch = store.dispatch;
   // window.fetchPlaylist = fetchPlaylist;
   // window.fetchAlbum = fetchAlbum;
   const root = document.getElementById('root');

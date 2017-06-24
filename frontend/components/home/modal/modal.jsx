@@ -19,7 +19,6 @@ class Modal extends React.Component {
       left: '50%',
       transform: 'translate(-50%, -50%)',
       zIndex: '9999',
-      background: '#fff'
     }
 
     let backdropStyle = {
@@ -29,7 +28,8 @@ class Modal extends React.Component {
        top: '0px',
        left: '0px',
        zIndex: '9998',
-       background: 'rgba(0, 0, 0, 0.8)'
+       background: 'rgba(0, 0, 0, 0.9)',
+       display: 'flex'
      }
 
     return (
@@ -38,8 +38,7 @@ class Modal extends React.Component {
          {this.props.children}
        </div>
        {!this.props.noBackdrop &&
-           <div style={backdropStyle}
-                onClick={e => this.close(e)}/>}
+           <div style={backdropStyle} />}
      </div>
     );
   }
