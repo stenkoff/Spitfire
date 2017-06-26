@@ -1,0 +1,44 @@
+.add-to-playlist {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playlist-options {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  // margin: 15px;
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  margin-left: 20px;
+  &:hover {
+    cursor: pointer;
+    content: 'add'
+  }
+  // height: 100vh;
+}
+// #add-track {
+//   display: flex;
+//   flex-direction: column;
+//   align-content: center;
+//   align-items: center;
+//   background-color: transparent;
+//   // width: 100%;
+//
+//   // height: 100vh;
+//   justify-content: center;
+//   // position: absolute;
+// }
+
+.add-to-playlist h1 {
+  font-size: 54px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  height: auto;
+  color: #fff;
+  margin: 30px 90px 30px 90px;
+  text-align: center;
+}

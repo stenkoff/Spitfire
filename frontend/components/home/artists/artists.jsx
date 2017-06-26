@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import Modal from '../modal/modal';
 import { createPlaylist } from '../../../actions/playlist_actions'
 
-class Albums extends React.Component {
+
+class Artists extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,14 +17,14 @@ class Albums extends React.Component {
   }
 
   render() {
-    const albums = this.props.albums
+    const artists = this.props.artists
+
     return (
       <section  className='main'>
-
         <div className='new-playlist'>
           <button onClick={()=>this.openModal()}>NEW PLAYLIST</button>
           <Modal className='new-playlist-form' isOpen={this.state.modal} onClose={() => this.closeModal()}>
-              <button id='close-button' onClick={() => this.closeModal()}>x</button>
+              <button id='close-button' onClick={() => this.closeModal()}>×</button>
               <h1>Create new playlist</h1>
               <label className='new-playlist-name'>
                 <input
@@ -40,11 +41,10 @@ class Albums extends React.Component {
 
         <section className='playlist-section'>
           {
-            albums.map(album =>
-            <div key={album.id} className='playlist-item'>
-              <img className='playlist-image' src={album.image_url}/>
-              <h1><Link to={`/albums/${album.id}`}>{album.name}</Link></h1>
-              <h2 className='creator'>{album.artist}</h2>
+            artists.map(artist =>
+            <div key={artist.id} className='playlist-item'>
+              <img className='artists-image' src={artist.image_url}/>
+              <h1><Link to={`/artists/${artist.id}`}>{artist.name}</Link></h1>
             </div>)
           }
         </section>
@@ -78,13 +78,12 @@ class Albums extends React.Component {
       );
     }
   }
-
 }
 
 const mapStateToProps = (state, ownProps) => {
   const user = state.session.currentUser;
   return {
-    albums: user.album_ids.map(id => state.albums[id]),
+    artists: user.artist_ids.map(id => state.artists[id]),
     user: state.session.currentUser
   };
 };
@@ -96,5 +95,5 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps)
-  (Albums);
+  (Artists);
 ;

@@ -1,20 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Playlists from './playlists';
+import { createPlaylist } from '../../../actions/playlist_actions'
 // import { fetchPlaylistsForUser } from '../../actions/playlist_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const user = state.session.currentUser;
   return {
-    playlists: user.playlist_ids.map(id => state.playlists[id])
-    // playlists: Object.keys(state.currentUser.playlists).map(id => state.currentUser.playlists[id])
+    playlists: user.playlist_ids.map(id => state.playlists[id]),
+    user: state.session.currentUser
   };
 };
 
-// const mapDispatchToProps = (dispatch, ownProps) => {
-//   fetchPlaylists: () => dispatch(fetchPlaylistsForUser());
-// };
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    createPlaylist: playlist => dispatch(createPlaylist(playlist)),
+    // fetchPlaylists: playlist => dispatch(fetchPlaylists(playlist))
+  };
+};
 
 export default connect(
-  mapStateToProps)
+  mapStateToProps,
+  mapDispatchToProps)
   (Playlists);

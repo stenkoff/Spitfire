@@ -8,9 +8,7 @@ class Playlists extends React.Component {
     super(props);
     this.state = {
       modal: false,
-      playlist: {
-        name: ''
-      }
+      playlistName: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -63,16 +61,22 @@ class Playlists extends React.Component {
     this.setState({ modal: false });
   }
 
-  handleChange(field) {
+  handleChange() {
     return e => {
-      this.setState({[field]: e.currentTarget.value});
+      this.setState({playlistName: e.currentTarget.value});
     };
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
     e.preventDefault();
-    const playlist = Object.assign({}, this.state.playlist);
-    this.props.createPlaylist(playlist)
+    if (!!this.state.playlistName) {
+      const playlist = {user_id: this.props.user.id, name: this.state.playlistName};
+      this.props.createPlaylist(playlist)
+        .then(({playlist}) => {
+          return this.props.history.push(`playlists/${playlist.id}`)
+        }
+      );
+    }
   }
 }
 

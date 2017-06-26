@@ -1,3 +1,55 @@
 // Place all the styles related to the Api::Artists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.artist {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.artist-image {
+  height: 300px;
+  width: 300px;
+}
+
+.artist h1 {
+  font-size: 42px;
+  color: #fff;
+  // margin-top: 20px;
+  margin-bottom: 15px;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.artist h2 {
+  font-size: 30px;
+  color: #fff;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.artists-image {
+  object-fit: cover;
+  height: 250px;
+  width: auto;
+  border-radius: 180px;
+}
+
+@media only screen and (max-width: 1065px) {
+  .artists-image {
+    height: 225px;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .artists-image {
+    height: 200px;
+    width: auto;
+  }
+}

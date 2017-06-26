@@ -13,27 +13,26 @@
 #   t.datetime "created_at", null: false
 #   t.datetime "updated_at", null: false
 # end
-Track.create(title: 'Free Smoke', ord: 1, album_id: 1)
-Track.create(title: 'No Long Talk', ord: 2, album_id: 1)
-Track.create(title: 'Passionfruit', ord: 3, album_id: 1)
-Track.create(title: 'Jorja Interlude', ord: 4, album_id: 1)
-Track.create(title: 'Get It Together', ord: 5, album_id: 1)
-Track.create(title: 'Madiba Riddim', ord: 6, album_id: 1)
-Track.create(title: 'Blem', ord: 7, album_id: 1)
-Track.create(title: '4422', ord: 8, album_id: 1)
-Track.create(title: 'Gyalchester', ord: 9, album_id: 1)
-Track.create(title: 'Skepta Interlude', ord: 10, album_id: 1)
-Track.create(title: 'Portland', ord: 11, album_id: 1)
-Track.create(title: 'Sacrifices', ord: 12, album_id: 1)
-Track.create(title: 'Nothings Into Somethings', ord: 13, album_id: 1)
-Track.create(title: 'Teenage Forever', ord: 14, album_id: 1)
-Track.create(title: 'KMT', ord: 15, album_id: 1)
-Track.create(title: 'Lose You', ord: 16, album_id: 1)
-Track.create(title: "Can't have everything", ord: 17, album_id: 1)
-Track.create(title: 'Glow', ord: 18, album_id: 1)
-Track.create(title: 'Since Way Back', ord: 19, album_id: 1)
-Track.create(title: 'Fake Lobe', ord: 20, album_id: 1)
-Track.create(title: 'Ice Melts', ord: 21, album_id: 1)
-Track.create(title: 'Do Not Disturb', ord: 22, album_id: 1)
+Track.destroy_all
+Artist.destroy_all
+Album.destroy_all
+Playlist.destroy_all
+Playlisting.destroy_all
 
-Track.create(title: 'Up Up & Away', album_id: 13, ord: 15)
+
+chance = Artist.create(name: 'Chance the Rapper', image: File.open('app/assets/images/chance.png'))
+cb = Album.create(name: 'Coloring Book', artist_id: chance.id, image: File.open('app/assets/images/chance.png'))
+Track.create(title: 'All We Got', album_id: cb.id, ord: 1, audio: File.open('app/assets/tracks/01_All_We_Got.m4a'))
+Track.create(title: 'No Problem', album_id: cb.id, ord: 2, audio: File.open('app/assets/tracks/02_No_Problem.m4a'))
+Track.create(title: 'Summer Friends', album_id: cb.id, ord: 3, audio: File.open('app/assets/tracks/03_Summer_Friends.m4a'))
+Track.create(title: 'D.R.A.M. Sings Special', album_id: cb.id, ord: 4, audio: File.open('app/assets/tracks/04_D.R.A.M._Sings_Special.m4a'))
+Track.create(title: 'Blessings', album_id: cb.id, ord: 5, audio: File.open('app/assets/tracks/05_Blessings.m4a'))
+Track.create(title: 'Same Drugs', album_id: cb.id, ord: 6, audio: File.open('app/assets/tracks/06_Same_Drugs.m4a'))
+Track.create(title: 'Mixtape', album_id: cb.id, ord: 7, audio: File.open('app/assets/tracks/07_Mixtape.m4a'))
+Track.create(title: 'Angels', album_id: cb.id, ord: 8, audio: File.open('app/assets/tracks/08_Angels.m4a'))
+Track.create(title: 'Juke Jam', album_id: cb.id, ord: 9, audio: File.open('app/assets/tracks/09_Juke_Jam.m4a'))
+Track.create(title: 'All Night', album_id: cb.id, ord: 10, audio: File.open('app/assets/tracks/10_All_Night.m4a'))
+Track.create(title: 'How Great', album_id: cb.id, ord: 11, audio: File.open('app/assets/tracks/11_How_Great.m4a'))
+Track.create(title: 'Smoke Break', album_id: cb.id, ord: 12, audio: File.open('app/assets/tracks/12_Smoke_Break.m4a'))
+Track.create(title: 'Finish Line Drown', album_id: cb.id, ord: 13, audio: File.open('app/assets/tracks/13_Finish_Line_Drown.m4a'))
+Track.create(title: 'Blessings', album_id: cb.id, ord: 14, audio: File.open('app/assets/tracks/14_Blessings.m4a'))

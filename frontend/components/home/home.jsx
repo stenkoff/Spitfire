@@ -4,6 +4,9 @@ import PlaylistsContainer from './playlists/playlists_container';
 import PlaylistShow from './playlists/playlist_show';
 import Albums from './albums/albums';
 import AlbumShow from './albums/album_show';
+import Artists from './artists/artists';
+import ArtistShow from './artists/artist_show';
+import MusicNav from './music_nav';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 
 class Home extends React.Component   {
@@ -34,23 +37,15 @@ class Home extends React.Component   {
             </section>
           </div>
 
-          <div className='music'>
-          <section className='playlist-header'>
-            <ul className='music-bar'>
-              <li><Link to='/playlists' id='music'>PLAYLISTS</Link></li>
-              <li>ARTISTS</li>
-              <li><Link to='/albums' id='music'>ALBUMS</Link></li>
-            </ul>
-          </section>
+          <Switch>
+            <ProtectedRoute exact path='/playlists' component={MusicNav}/>
+            <ProtectedRoute exact path='/artists' component={MusicNav}/>
+            <ProtectedRoute exact path='/albums' component={MusicNav}/>
+            <ProtectedRoute exact path='/playlists/:id' component={PlaylistShow}/>
+            <ProtectedRoute exact path='/albums/:id' component={AlbumShow} />
+            <ProtectedRoute exact path='/artists/:id' component={ArtistShow} />
+          </Switch>
 
-        <Switch>
-          <ProtectedRoute exact path='/' component={PlaylistsContainer}/>
-          <ProtectedRoute exact path='/playlists' component={PlaylistsContainer}/>
-          <ProtectedRoute exact path='/playlists/:id' component={PlaylistShow} />
-          <ProtectedRoute exact path='/albums' component={Albums} />
-          <ProtectedRoute exact path='/albums/:id' component={AlbumShow} />
-        </Switch>
-      </div>
       </div>
           <div className='playbar'>
             <h1></h1>

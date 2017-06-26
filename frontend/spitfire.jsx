@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const preloadedState = {
       session: { currentUser: user.user },
       playlists: user.playlists,
-      albums: user.albums
+      albums: user.albums,
+      artists: user.artists
     };
     store = configureStore(preloadedState);
     delete window.currentUser;
