@@ -11,3 +11,7 @@ export const fetchArtist = id => {
     url: `/api/artists/${id}`
   });
 };
+
+// export const fetchArtistsForUser = () {
+//
+// }

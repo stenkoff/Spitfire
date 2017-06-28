@@ -4,6 +4,8 @@ import TracksReducer from './tracks_reducer';
 import PlaylistsReducer from './playlists_reducer';
 import AlbumsReducer from './albums_reducer';
 import ArtistsReducer from './artists_reducer';
+import AudioReducer from './audio_reducer';
+import SearchReducer from './search_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -11,6 +13,8 @@ const RootReducer = combineReducers({
   tracks: TracksReducer,
   albums: AlbumsReducer,
   artists: ArtistsReducer,
+  queue: AudioReducer,
+  results: SearchReducer
 });
 
 export default RootReducer;

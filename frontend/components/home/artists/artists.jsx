@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Modal from '../modal/modal';
 import { createPlaylist } from '../../../actions/playlist_actions'
+// import { fetchArtists } from '../../../artists/playlist_artists'
 
 
 class Artists extends React.Component {
@@ -16,7 +17,12 @@ class Artists extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // componentDidMount() {
+  //   this.props.fetchArtists();
+  // }
+
   render() {
+    // if (this.props.artsts)
     const artists = this.props.artists
 
     return (
@@ -43,14 +49,19 @@ class Artists extends React.Component {
           {
             artists.map(artist =>
             <div key={artist.id} className='playlist-item'>
-              <img className='artists-image' src={artist.image_url}/>
-              <h1><Link to={`/artists/${artist.id}`}>{artist.name}</Link></h1>
+              <Link to={`/artists/${artist.id}`}>
+                <img className='artists-image' src={artist.image_url}/>
+                <h1>{artist.name}</h1>
+              </Link>
             </div>)
           }
         </section>
 
       </section>
     );
+  // } else {
+  //   return null;
+  // }
   }
 
   openModal() {
@@ -90,10 +101,10 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     createPlaylist: playlist => dispatch(createPlaylist(playlist)),
+    // fetchArtists: artists => dispatch(fetchArtists());
   };
 };
 export default connect(
   mapStateToProps,
   mapDispatchToProps)
   (Artists);
-;

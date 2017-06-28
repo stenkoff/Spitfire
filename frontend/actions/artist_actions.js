@@ -27,6 +27,3 @@ export const fetchArtists = () => dispatch => {
   return APIUtil.fetchArtists()
     .then(artists => dispatch(receiveArtists(artists)));
 };
-
-window.fetchArtists = fetchArtists;
-window.fetchArtist = fetchArtist;

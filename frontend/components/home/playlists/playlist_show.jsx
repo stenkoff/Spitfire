@@ -1,13 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchPlaylist } from '../../../actions/playlist_actions';
+import { fetchPlaylist, removeTrack } from '../../../actions/playlist_actions';
 import AddTrack from './add_track';
+import { receiveSong, receiveSongs } from '../../../actions/audio_actions';
 
 class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
     this.deletePlaylist = this.deletePlaylist.bind(this);
+    this.playTrack = this.playTrack.bind(this);
+    this.playTracks = this.playTracks.bind(this);
+    // this.mouseOver = this.mouseOver.bind(this);
+    // this.mouseOut = this.mouseOut.bind(this);
+    this.state = { play: '' }
+    // this.time = this.time.bind(this);
+    // this.getAudio = this.getAudio.bind(this);
   }
 
   componentDidMount() {
@@ -26,8 +34,38 @@ class PlaylistShow extends React.Component {
       .then(this.props.history.push('/playlists'))
   }
 
-  render() {
+  removeTrack(track) {
+    return (e) => {
+      e.preventDefault();
+      const playlisting = {
+        playlist_id: this.props.playlist.id,
+        playlist_ord: track.playlist_ord
+      }
+      this.props.removeTrack(playlisting)
+        .then(this.props.fetchPlaylist(this.props.playlist.id))
+    }
+  }
 
+  playTrack(track) {
+    return (e) => {
+      e.preventDefault();
+      this.props.playTrack(track);
+    }
+  }
+
+  playTracks(e) {
+      e.preventDefault();
+      this.props.playTracks(this.props.tracks);
+  }
+
+  // mouseOver() {
+  //   this.setState({play: <i onClick= {this.playTrack} className="fa fa-play" aria-hidden="true"></i> });
+  // }
+  // mouseOut(i) {
+  //   this.setState({play: ''});
+  // }
+
+  render() {
     if (this.props.tracks) {
       let length = this.props.tracks.length;
       let songs = length === 1 ? `${length} SONG` : `${length} SONGS`;
@@ -37,6 +75,7 @@ class PlaylistShow extends React.Component {
         <div className='pl-image'>
           <img
             className = 'playlist-image'
+            onClick ={this.playTracks}
             src={this.props.playlist.image_url}/>
 
           <div className='pl-info'>
@@ -44,7 +83,7 @@ class PlaylistShow extends React.Component {
             <h2>By {this.props.playlist.creator}</h2>
             <h3>{songs}</h3>
             <button
-              onClick={e => this.deletePlaylist(e)}>DELETE</button>
+              onClick={(e) => this.deletePlaylist(e)}>DELETE</button>
           </div>
       </div>
 
@@ -52,19 +91,22 @@ class PlaylistShow extends React.Component {
         {
           this.props.tracks.map((track, i) =>
             <li key={i}>
-              <div className='pl-title'>
-                <div className='ord'>{i+1}.</div>
-                <div>
+                <div  className='pl-tracks-left'>
+                  <p className='num'>{i+1}.</p>
+                    <p className='pl-tracks-btn' onClick={this.playTrack(track)}></p>
+                  </div>
+
+                <div className='track-info'>
                   <h1>{track.title}</h1>
                   <h2><Link to={`/artists/${track.artist_id}`}>{track.artist}</Link></h2>
-                  <audio controls="controls" src={`${track.audio}`}>
-                    Play
-                  </audio>
-                </div>
               </div>
               <div  className='pl-tracks-right'>
                 <h3>time</h3>
-                <AddTrack />
+                <nav className='track-dropdown'>...</nav>
+                <div className='pl-options'>
+                  <AddTrack className='add-to-pl' track={track}/>
+                  <button className= 'remove-from-pl' onClick={this.removeTrack(track)}>Remove From Playlist</button>
+                </div>
               </div>
           </li>)
           }
@@ -89,7 +131,10 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchPlaylist: id => dispatch(fetchPlaylist(id)),
-    deletePlaylist: id => dispatch(deletePlaylist(id))
+    deletePlaylist: id => dispatch(deletePlaylist(id)),
+    removeTrack: playlisting => dispatch(removeTrack(playlisting)),
+    playTrack: track => dispatch(receiveSong(track)),
+    playTracks: tracks => dispatch(receiveSongs(tracks))
   };
 };
 

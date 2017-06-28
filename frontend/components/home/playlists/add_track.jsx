@@ -11,7 +11,7 @@ class AddTrack extends React.Component {
     this.state = {
       modal: false,
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.addTrack = this.addTrack.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
   }
@@ -32,8 +32,10 @@ class AddTrack extends React.Component {
                 {
                   playlists.map(playlist =>
                   <div key={playlist.id} className='playlist-item'>
-                    <img className='playlist-image' src={playlist.image_url} onClick={(e) => this.handleClick(e, playlist)}/>
-                    <h1><Link to={`/playlists/${playlist.id}`}>{playlist.name}</Link></h1>
+                    <img
+                      className='playlist-image'
+                      src={playlist.image_url} onClick={(e) => this.addTrack(e, playlist)}/>
+                    <h1>{playlist.name}</h1>
                     <h2 className='creator'>{playlist.creator}</h2>
                   </div>)
                 }
@@ -53,13 +55,16 @@ class AddTrack extends React.Component {
     this.setState({ modal: false });
   }
 
-  handleClick(e, playlist) {
-    const playlisting = {
-      track_id: this.props.track.id,
-      playlist_id: playlist.id
-    }
-    this.props.addTrack(playlisting)
-      .then(() => this.closeModal())
+  addTrack(e, playlist) {
+    // (e) => {
+      e.preventDefault();
+      const playlisting = {
+        track_id: this.props.track.id,
+        playlist_id: playlist.id
+      }
+      this.props.addTrack(playlisting)
+        .then(() => this.closeModal())
+    // }
   }
 }
 

@@ -21,14 +21,14 @@ class ArtistShow extends React.Component {
     if (this.props.tracks) {
       return (
         <section className='artist'>
-          <h1>{this.props.artist.name}</h1>
           <div>
             <img className ='artist-image'
               src={this.props.artist.image_url}/>
-          </div>
+            </div>
 
-            <h2>Popular</h2>
         <div className='artist-tracks'>
+          <h2>Popular</h2>
+          <h1>{this.props.artist.name}</h1>
           <ol >
             {
               this.props.tracks.slice(5).map((track,idx) =>

@@ -23,7 +23,7 @@ class Albums extends React.Component {
         <div className='new-playlist'>
           <button onClick={()=>this.openModal()}>NEW PLAYLIST</button>
           <Modal className='new-playlist-form' isOpen={this.state.modal} onClose={() => this.closeModal()}>
-              <button id='close-button' onClick={() => this.closeModal()}>x</button>
+              <button id='close-button' onClick={() => this.closeModal()}>×</button>
               <h1>Create new playlist</h1>
               <label className='new-playlist-name'>
                 <input
@@ -42,8 +42,11 @@ class Albums extends React.Component {
           {
             albums.map(album =>
             <div key={album.id} className='playlist-item'>
-              <img className='playlist-image' src={album.image_url}/>
-              <h1><Link to={`/albums/${album.id}`}>{album.name}</Link></h1>
+              <Link to={`/albums/${album.id}`}>
+              <img className='playlist-image'
+                src={album.image_url}/>
+                <h1>{album.name}</h1>
+              </Link>
               <h2 className='creator'>{album.artist}</h2>
             </div>)
           }

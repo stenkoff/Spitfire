@@ -30,7 +30,15 @@ export const deletePlaylist = id => {
 export const addTrack = playlisting => {
   return $.ajax({
     method: 'POST',
-    url: 'api/playlisting',
+    url: '/api/playlistings',
     data: { playlisting }
+  });
+};
+
+export const removeTrack = playlisting => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/playlistings/kill`,
+    data: playlisting
   });
 };

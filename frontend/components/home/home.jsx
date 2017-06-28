@@ -7,6 +7,8 @@ import AlbumShow from './albums/album_show';
 import Artists from './artists/artists';
 import ArtistShow from './artists/artist_show';
 import MusicNav from './music_nav';
+import PlayBar from './playbar';
+import Search from './search/search';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 
 class Home extends React.Component   {
@@ -32,7 +34,7 @@ class Home extends React.Component   {
             <section className='sidebar-bottom'>
               <div id='user' className='bottom'> {this.props.currentUser.username}</div>
               <div>
-                <button  className='bottom' onClick={this.props.logout}>Log Out</button>
+                <button  className='bottom' onClick={this.props.logout}>Logout</button>
               </div>
             </section>
           </div>
@@ -44,14 +46,12 @@ class Home extends React.Component   {
             <ProtectedRoute exact path='/playlists/:id' component={PlaylistShow}/>
             <ProtectedRoute exact path='/albums/:id' component={AlbumShow} />
             <ProtectedRoute exact path='/artists/:id' component={ArtistShow} />
+            <ProtectedRoute exact path='/search' component={Search} />
           </Switch>
 
-      </div>
-          <div className='playbar'>
-            <h1></h1>
-          </div>
+        </div>
+        <PlayBar />
       </section>
-
 
       );
     } else {

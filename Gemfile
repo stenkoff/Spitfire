@@ -13,6 +13,7 @@ gem 'paperclip'
 gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'figaro'
 gem 'aws-sdk'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'byebug'

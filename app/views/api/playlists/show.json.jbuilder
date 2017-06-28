@@ -5,9 +5,10 @@ json.playlist do
 end
 
 json.tracks do
-  @playlist.tracks.each do |track|
+  @playlist.tracks.each_with_index do |track, i|
     json.set! track.id do
-      json.extract! track, :title
+      json.extract! track, :title, :id
+      json.playlist_ord i
       json.artist track.artist.name
       json.artist_id track.artist.id
       json.audio asset_path(track.audio.url)

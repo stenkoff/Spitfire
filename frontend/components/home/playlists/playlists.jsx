@@ -23,17 +23,19 @@ class Playlists extends React.Component {
           <div className='new-playlist'>
             <button onClick={()=>this.openModal()}>NEW PLAYLIST</button>
             <Modal className='new-playlist-form' isOpen={this.state.modal} onClose={() => this.closeModal()}>
-                <button id='close-button' onClick={() => this.closeModal()}>x</button>
+                <div className='new-playlist-top'>
+                <button id='close-button2' onClick={() => this.closeModal()}>×</button>
                 <h1>Create new playlist</h1>
+              </div>
                 <label className='new-playlist-name'>
                   <input
                     onChange={this.handleChange('name')}
       							placeholder='Start typing...'
       							value={this.state.name} />
                 </label>
-      					<div className='modal-buttons' >
-                  <button id='m1' onClick={() => this.closeModal()}>CANCEL</button>
-      	          <button id='m2' onClick={e => this.handleSubmit(e)}>CREATE</button>
+      					<div className='modal-buttons2' >
+                  <button id='m3' onClick={() => this.closeModal()}>CANCEL</button>
+      	          <button id='m4' onClick={e => this.handleSubmit(e)}>CREATE</button>
       					</div>
             </Modal>
           </div>
@@ -42,8 +44,8 @@ class Playlists extends React.Component {
           {
             playlists.map(playlist =>
             <div key={playlist.id} className='playlist-item'>
-              <img className='playlist-image' src={playlist.image_url}/>
-              <h1><Link to={`/playlists/${playlist.id}`}>{playlist.name}</Link></h1>
+              <Link to={`/playlists/${playlist.id}`}><img className='playlist-image' src={playlist.image_url}/>
+              <h1>{playlist.name}</h1></Link>
               <h2 className='creator'>{playlist.creator}</h2>
             </div>)
           }
