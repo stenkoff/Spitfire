@@ -13,3 +13,5 @@ export const fetchSearch = search => dispatch => {
   return APIUtil.search(search)
     .then(results => dispatch(recieveSearch(results)));
 };
+
+window.fetchSearch = fetchSearch;

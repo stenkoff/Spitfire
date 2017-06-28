@@ -1,5 +1,42 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.search-header {
+  padding: 25px;
+  padding-bottom: 0px;
+  background: #242424;
+  display: flex;
+  flex-direction: column;
+  min-height: 115px;
+}
+.search-header label {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  min-width: 315px;
+  color: #fff;
+}
+
 .search-input {
-  // color: black;
-  background: black;
-  color: white;
+  background: transparent;
+  color: #fff;
+  line-height: 1.2;
+  font-size: 62px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Proxima Nova, sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.search-input::-webkit-input-placeholder {
+  color: #666666;
+}
+
+
+.results {
+  background: #0b0b0b;
+  height: 100%;
 }

@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   handleChange(field) {
@@ -24,6 +25,14 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
+
+	demoLogin(e) {
+		e.preventDefault();
+    this.props.processForm({
+			username: 'demo',
+			password: 'password'
+		});
+	}
 
 	renderErrors() {
 			return (
@@ -67,6 +76,7 @@ class SessionForm extends React.Component {
 
 					<div className='formItem' >
 	          <button onClick={e => this.handleSubmit(e)}>{formType}</button>
+						<button className='demo' onClick={this.demoLogin}>Demo Login</button>
 					</div>
 					<Link to={`${url}`} className='newSession'>{form2}</Link>
         </form>

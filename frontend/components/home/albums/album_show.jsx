@@ -30,7 +30,7 @@ class AlbumShow extends React.Component {
   }
 
   render() {
-    if (this.props.tracks) {
+    if (this.props.tracks && this.props.album.name) {
       let length = this.props.tracks.length;
       let songs = length === 1 ? `${length} SONG` : `${length} SONGS`;
       return (
@@ -83,8 +83,12 @@ class AlbumShow extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   const tracks = Object.values(state.tracks);
+  let album = state.albums[ownProps.match.params.id]
+  if (!album) {
+    album = { name: null, id: null, image_url: '', artist: ''}
+  }
   return {
-    album: state.albums[ownProps.match.params.id],
+    album: album,
     tracks: tracks,
     addTrack: playlisting => addTrack(playlisting)
   };

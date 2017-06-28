@@ -11,11 +11,7 @@ class PlaylistShow extends React.Component {
     this.deletePlaylist = this.deletePlaylist.bind(this);
     this.playTrack = this.playTrack.bind(this);
     this.playTracks = this.playTracks.bind(this);
-    // this.mouseOver = this.mouseOver.bind(this);
-    // this.mouseOut = this.mouseOut.bind(this);
     this.state = { play: '' }
-    // this.time = this.time.bind(this);
-    // this.getAudio = this.getAudio.bind(this);
   }
 
   componentDidMount() {
@@ -66,7 +62,7 @@ class PlaylistShow extends React.Component {
   // }
 
   render() {
-    if (this.props.tracks) {
+    if (this.props.tracks && this.props.playlist.name) {
       let length = this.props.tracks.length;
       let songs = length === 1 ? `${length} SONG` : `${length} SONGS`;
       return (
@@ -122,9 +118,13 @@ class PlaylistShow extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   const tracks = Object.values(state.tracks);
+  let playlist = state.playlists[ownProps.match.params.id]
+  if (!playlist) {
+    playlist = { name: null, id: null, image_url: '', artist: ''}
+  }
   return {
-    playlist: state.playlists[ownProps.match.params.id],
-    tracks: tracks
+    playlist: playlist,
+    tracks: tracks,
   };
 };
 

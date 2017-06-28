@@ -14,7 +14,7 @@ const RootReducer = combineReducers({
   albums: AlbumsReducer,
   artists: ArtistsReducer,
   queue: AudioReducer,
-  results: SearchReducer
+  search: SearchReducer
 });
 
 export default RootReducer;

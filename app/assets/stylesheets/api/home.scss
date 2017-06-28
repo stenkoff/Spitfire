@@ -51,9 +51,24 @@
   margin-top: 24px;
   padding-bottom: 24px;
 }
-#search {
+#search a {
   padding-bottom: 19px;
   padding-top: 19px;
+  display: flex;
+  justify-content: space-between;
+  &:hover {
+    color: white;
+  }
+  // &:visited {
+  //   color: green;
+  // }
+  // &:after {
+  //   color: white;
+  // }
+  // &:before {
+  //   color: white;
+  // }
+
   // background-color: transparent;
 }
 #line {
@@ -63,13 +78,20 @@
 #browse {
   padding-bottom: 19px;
   padding-top: 19px;
-  color: #1db954;
+  color: #a0a0a0;
+  width: 100%;
 }
 
-#music {
+
+#music a {
   margin-bottom: 19px;
   color: #a0a0a0;
   text-decoration: none;
+  width: 100%;
+}
+
+.green {
+  color: #1db954;
 }
 
 .sidebar-bottom {

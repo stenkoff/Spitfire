@@ -47,9 +47,13 @@ class ArtistShow extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   const tracks = Object.values(state.tracks);
+  let artist = state.artists[ownProps.match.params.id]
+  if (!artist) {
+    artist = { name: '', id: null, image_url: ''}
+  }
   return {
-    artist: state.artists[ownProps.match.params.id],
-    tracks: tracks
+    artist,
+    tracks
   };
 };
 

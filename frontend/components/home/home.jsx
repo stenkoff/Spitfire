@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link, Redirect } from 'react-router-dom';
+import { Switch, Route, Link, Redirect, NavLink } from 'react-router-dom';
 import PlaylistsContainer from './playlists/playlists_container';
 import PlaylistShow from './playlists/playlist_show';
 import Albums from './albums/albums';
@@ -25,10 +25,12 @@ class Home extends React.Component   {
           <div className='sidebar'>
             <ul className='sidebar-top'>
               <li id='logo'>Spitfire</li>
-              <li id='search'>Search</li>
+              <li id = 'search'>
+                <NavLink to='/search' activeClassName='green'>Search<i className="fa fa-search" aria-hidden="true"></i></NavLink>
+              </li>
               <li id='line'></li>
               <li id='browse'>Browse</li>
-              <li><Link to='/playlists' id='music'>Your Music</Link></li>
+              <li><NavLink to='/playlists' id='music' activeClassName='green'>Your Music</NavLink></li>
             </ul>
 
             <section className='sidebar-bottom'>

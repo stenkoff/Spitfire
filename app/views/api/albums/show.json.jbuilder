@@ -2,6 +2,7 @@ json.album do
   json.extract! @album, :id, :name, :artist_id
   json.artist @album.artist.name
   json.track_ids @album.tracks.pluck(:id)
+  json.image_url asset_path(@album.image.url)
 end
 
 json.tracks do

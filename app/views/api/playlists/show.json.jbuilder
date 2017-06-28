@@ -1,7 +1,8 @@
 json.playlist do
-  json.extract! @playlist, :id, :name, :user
+  json.extract! @playlist, :id, :name
   json.track_ids @playlist.tracks.pluck(:id)
   json.image_url asset_path(@playlist.image.url)
+  json.creator @playlist.user.username
 end
 
 json.tracks do

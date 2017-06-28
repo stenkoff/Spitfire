@@ -9,7 +9,7 @@ class PlayBar extends React.Component {
     this.togglePlay = this.togglePlay.bind(this);
     this.audioPlayer = this.audioPlayer.bind(this);
     // this.controls = this.controls.bind(this);
-    // this.length = this.length.bind(this);
+    this.length = this.length.bind(this);
     this.skip = this.skip.bind(this);
     this.previous = this.previous.bind(this);
   }
@@ -42,7 +42,6 @@ class PlayBar extends React.Component {
 
   }
   audioPlayer() {
-    // debugger
     if (this.props.queue.length > 0) {
       return (<audio
           autoPlay
@@ -97,6 +96,9 @@ class PlayBar extends React.Component {
               <div className='length'>{this.length()}</div>
             </div>
             <div className='bar'>___</div>
+          </div>
+          <div>
+
           </div>
         </section>
         );

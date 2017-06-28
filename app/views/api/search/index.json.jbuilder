@@ -1,6 +1,6 @@
 json.playlists do
   json.array!(@playlists) do |playlist|
-    json.extract! playlist, :name, :user
+    json.extract! playlist, :id, :name, :user
     json.image_url asset_path(playlist.image.url)
   end
 end
@@ -9,7 +9,7 @@ json.albums do
   json.array!(@albums) do |album|
     json.extract! album, :id, :name
     json.artist album.artist.name
-    json.image_url asset_path(playlist.image.url)
+    json.image_url asset_path(album.image.url)
   end
 end
 
