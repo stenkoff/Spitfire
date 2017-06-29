@@ -97,7 +97,6 @@ class PlaylistShow extends React.Component {
                   <h2><Link to={`/artists/${track.artist_id}`}>{track.artist}</Link></h2>
               </div>
               <div  className='pl-tracks-right'>
-                <h3>time</h3>
                 <nav className='track-dropdown'>...</nav>
                 <div className='pl-options'>
                   <AddTrack className='add-to-pl' track={track}/>

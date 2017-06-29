@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchAlbum } from '../../../actions/album_actions';
-// import { addTrack } from '../../../actions/playlist_actions';
+import { addTrack } from '../../../actions/playlist_actions';
 import AddTrack from '../playlists/add_track';
 import { receiveSong, receiveSongs } from '../../../actions/audio_actions';
 
@@ -36,6 +36,7 @@ class AlbumShow extends React.Component {
   }
 
   render() {
+    // debugger
     if (this.props.tracks && this.props.album.name) {
       let length = this.props.tracks.length;
       let songs = length === 1 ? `${length} SONG` : `${length} SONGS`;
@@ -45,7 +46,7 @@ class AlbumShow extends React.Component {
           <img className = 'playlist-image'
               onClick ={this.playTracks}
               src={this.props.album.image_url}/>
-              
+
             <div className='pl-info'>
               <h1>{this.props.album.name}</h1>
               <h2>
@@ -58,7 +59,7 @@ class AlbumShow extends React.Component {
           </div>
 
           <div className='pl-tracks'>
-            <ol >
+            <ol>
               {
                 this.props.tracks.map((track, i) =>
                   <li key={i}>
@@ -68,13 +69,14 @@ class AlbumShow extends React.Component {
                       </div>
                       <div className='track-info'>
                         <h1>{track.title}</h1>
-                        <h2>{track.artist}</h2>
+                        <h2>{this.props.album.artist}</h2>
                       </div>
-                    <div  className='pl-tracks-right'>
-                      <div className='pl-options'>
-                      <h3>time</h3>
+                      <div  className='pl-tracks-right'>
+                        <nav className='track-dropdown'>...</nav>
+                        <div className='pl-options'>
+                          <AddTrack className='add-to-pl' track={track}/>
 
-                      <AddTrack track={track}/>
+
                     </div>
                     </div>
                 </li>)

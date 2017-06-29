@@ -38,13 +38,14 @@
 
 .pl-info h1 {
   font-size: 36px;
-  padding-bottom: 8px;
+  padding-bottom: 6px;
+  text-align: center;
 }
 .pl-info h2, a {
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 100;
   // padding-bottom: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   color: #a0a0a0;
   text-decoration: none;
 }
@@ -52,6 +53,8 @@
 .pl-info h3 {
   font-size: 14px;
   color: #a0a0a0;
+  font-weight: 100;
+  letter-spacing: 1px;
 }
 
 .pl button {
@@ -90,15 +93,17 @@
   transition: background-color .2s linear;
   box-sizing: border-box;
   &:hover {
-    // background-color: black;
-    // background: transparentize(black, .5%);
+    background-color: black;
+    background: transparentize(black, .5%);
     // opacity: .4;
+    z-index: 100;
   }
 }
 .pl-tracks-left {
   text-align: right;
-  padding-right: 1em;
-  width: 3em;
+  padding-right: 20px;
+  width: 25px;
+
 }
 .track-info {
   text-align: left;
@@ -107,9 +112,25 @@
   flex-shrink: 1;
 }
 
+.track-info h1 {
+  color: #fff;
+  font-size: 17px;
+  font-family: 'Proxima-nova', sans-serif;
+  font-weight: 100;
+  margin-bottom: 5px;
+}
+
+.track-info h2 {
+  font-size: 14px;
+  font-family: 'Proxima-nova', sans-serif;
+  font-weight: 100;
+}
+
 .num {
   // padding-right: 20px;
   // padding-left: 20px;
+  font-size: 17px;
+  font-weight: 100;
   cursor: pointer;
   &:hover {
     color: #fff;

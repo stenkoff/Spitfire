@@ -3,7 +3,7 @@ class Api::PlaylistingsController < ApplicationController
   def create
     @playlisting = Playlisting.new(playlisting_params)
     @playlist = Playlist.find(@playlisting.playlist_id)
-    # @playlisting.ord = @playlist.tracks.length + 1
+    @playlisting.ord = Playlisting.last.ord + 1
     @playlisting.save
     render json: {}
   end

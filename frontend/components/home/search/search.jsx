@@ -116,8 +116,6 @@ class Search extends React.Component {
                        </div>
                      <div  className='pl-tracks-right'>
                        <div className='pl-options'>
-                       <h3>time</h3>
-
                        <AddTrack track={track}/>
                      </div>
                      </div>

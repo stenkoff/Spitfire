@@ -52,6 +52,7 @@ export const deletePlaylist = id => dispatch => {
 export const addTrack = playlisting => {
   return APIUtil.addTrack(playlisting);
 };
+
 export const removeTrack = playlisting => dispatch => {
   return APIUtil.removeTrack(playlisting)
     .then(playlist => dispatch(receivePlaylist(playlist)));
