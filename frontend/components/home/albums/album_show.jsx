@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import { fetchAlbum } from '../../../actions/album_actions';
 // import { addTrack } from '../../../actions/playlist_actions';
 import AddTrack from '../playlists/add_track';
-import { receiveSong } from '../../../actions/audio_actions';
+import { receiveSong, receiveSongs } from '../../../actions/audio_actions';
 
 
 class AlbumShow extends React.Component {
   constructor(props) {
     super(props);
     this.playTrack = this.playTrack.bind(this);
+    this.playTracks = this.playTracks.bind(this);
   }
 
   componentDidMount() {
@@ -29,6 +30,11 @@ class AlbumShow extends React.Component {
     }
   }
 
+  playTracks(e) {
+      e.preventDefault();
+      this.props.playTracks(this.props.tracks);
+  }
+
   render() {
     if (this.props.tracks && this.props.album.name) {
       let length = this.props.tracks.length;
@@ -37,7 +43,9 @@ class AlbumShow extends React.Component {
         <section className='pl'>
           <div className='pl-image'>
           <img className = 'playlist-image'
-            src={this.props.album.image_url}/>
+              onClick ={this.playTracks}
+              src={this.props.album.image_url}/>
+              
             <div className='pl-info'>
               <h1>{this.props.album.name}</h1>
               <h2>
@@ -99,7 +107,8 @@ const mapDispatchToProps = dispatch => {
     fetchAlbum: id => dispatch(fetchAlbum(id)),
     addTrack: playlisting => dispatch(addTrack(playlisting)),
     removeTrack: playlisting => dispatch(removeTrack(playlisting)),
-    playTrack: track => dispatch(receiveSong(track))
+    playTrack: track => dispatch(receiveSong(track)),
+    playTracks: tracks => dispatch(receiveSongs(tracks))
   };
 };
 

@@ -1,5 +1,6 @@
 import merge from 'lodash/merge';
 import { RECEIVE_CURRENT_SONG, RECEIVE_SONGS, SKIP } from '../actions/audio_actions';
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 const AudioReducer = (state = [], action) => {
   Object.freeze(state)
@@ -14,6 +15,8 @@ const AudioReducer = (state = [], action) => {
       newState = state.slice();
       newState = newState.concat(action.tracks);
       return newState;
+    case RECEIVE_CURRENT_USER:
+      return [];
     case SKIP:
       newState = state.slice(1);
       return newState;

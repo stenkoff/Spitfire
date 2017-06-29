@@ -5,31 +5,145 @@
   background-color: #282828;
   position: fixed;
   bottom: 0px;
+
   // flex-direction: column;
   // left: 0px;
 }
-
+//
 .playbar-items {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
   height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.playbar-left {
+  width: 30%;
+  min-width: 180px;
+}
+.playbar-middle {
+  width: 40%;
+  max-width: 722px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 31px;
   // align-content: space-between;
-  width: 125px;
-  flex-direction: row;
+  // width: 125px;
+  // flex-direction: row;
   // margin-bottom: 12px;
+  /* margin-bottom: 12px; */
+cursor: default;
+width: 224px;
+
+justify-content: space-between;
+
+flex-direction: row;
+
+flex-wrap: nowrap;
 }
-.bar {
+.progress-bar {
   // border-top: 1px solid red;
+  // width: 40%;
+  // border: 1px solid #404040;
+  background: #404040;
+  border-radius: 10px;
+  cursor: pointer;
+    // height: 12px;
+    position: relative;
+    width: 100%;
+    height: 4px;
+  // bottom: 15px;
+  // position: absolute;
+}
+.progress-bar__bg {
+background-color: #404040;
+border-radius: 2px;
+// display: -webkit-box;
+// display: -ms-flexbox;
+display: flex;
+height: 4px;
+width: 100%;
+}
+.playbar-bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+.progress {
+  border-radius: 20px;
+}
+.slider {
+  font-size: 10px;
 }
 
+.playbar-right {
+  width: 30%;
+  min-width: 180px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+#play {
+  // border: 1px solid;
+  border-radius: 90px;
+  padding-bottom: 8px;
+  padding-top: 10px;
+  padding-left: 11px;
+  padding-right: 9px;
+  background-color: #282828;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border: 1px solid #a0a0a0;
+  font-size: 13px;
+  &:hover {
+    color: white;
+    cursor: pointer;
+    border-color: white;
+  }
+}
+#pause {
+  // border: 1px solid;
+  border-radius: 90px;
+  padding: 9px 10px;
+  background-color: #282828;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border: 1px solid #a0a0a0;
+  font-size: 13px;
+  &:hover {
+    color: white;
+    cursor: pointer;
+    border-color: white;
+  }
+}
+
+.progress-time, .duration {
+  font-size: 11px;
+  margin-left: 2px;
+  margin-right: 2px;
+  vertical-align: baseline;
+}
+#previous:hover, #skip:hover {
+  color: white;
+  cursor: pointer;
+}
+// .fa, .fa-2x
 // sidbar: z-index 100
 // artist-image: width 100vw;
 // z-index: 0001
