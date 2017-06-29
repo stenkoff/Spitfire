@@ -26,7 +26,7 @@ cb = Album.create!(name: 'Coloring Book', artist_id: chance.id, image: File.open
 Track.create!(title: 'All We Got', album_id: cb.id, ord: 1, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/201/original/01_All_We_Got.m4a')
 Track.create!(title: 'No Problem', album_id: cb.id, ord: 2, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/202/original/02_No_Problem.m4a')
 Track.create!(title: 'Summer Friends', album_id: cb.id, ord: 3, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/203/original/03_Summer_Friends.m4a')
-Track.create!(title: 'D.R.A.M. Sings Special', album_id: cb.id, ord: 4, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/204/original/04_D.R.A.M._Sings_Special.m4a')
+# Track.create!(title: 'D.R.A.M. Sings Special', album_id: cb.id, ord: 4, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/204/original/04_D.R.A.M._Sings_Special.m4a')
 Track.create!(title: 'Blessings', album_id: cb.id, ord: 5, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/205/original/05_Blessings.m4a')
 Track.create!(title: 'Same Drugs', album_id: cb.id, ord: 6, audio: "https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/229/original/06_Same_Drugs.m4a")
 Track.create!(title: 'Mixtape', album_id: cb.id, ord: 7, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/206/original/07_Mixtape.m4a')
