@@ -38,10 +38,10 @@ Track.create!(title: 'Smoke Break', album_id: cb.id, ord: 12, audio: 'https://s3
 Track.create!(title: 'Finish Line Drown', album_id: cb.id, ord: 13, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/212/original/13_Finish_Line_Drown.m4a')
 Track.create!(title: 'Blessings', album_id: cb.id, ord: 14, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/213/original/14_Blessings.m4a')
 #
-kendrick = Artist.create!(name: 'Kendrick Lamar', image: 'https://s3.amazonaws.com/spitfire-dev/Kendrick.jpg')
+kendrick = Artist.create!(name: 'Kendrick Lamar', image: File.open('app/assets/images/kendrick.jpg'))
 tpab = Album.create!(name: 'To Pimp A Butterfly', artist_id: kendrick.id, image: 'https://s3.amazonaws.com/spitfire-dev/TPAB.png')
 # Track.create!(title: "Wesley's Theory", album_id: tpab.id, ord: 1, audio: "https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/228/original/01_Wesley's_Theory.mp3")
-Track.create!(title: 'For Free_ (Interlude)', album_id: tpab.id, ord: 2, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/214/original/02_For_Free__(Interlude).mp3')
+# Track.create!(title: 'For Free_ (Interlude)', album_id: tpab.id, ord: 2, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/214/original/02_For_Free__(Interlude).mp3')
 Track.create!(title: 'King Kunta', album_id: tpab.id, ord: 3, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/215/original/03_King_Kunta.mp3')
 # Track.create!(title: 'Institutionalized', album_id: tpab.id, ord: 4, audio: "https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/230/original/04_Institutionalized.mp3")
 Track.create!(title: 'These Walls', album_id: tpab.id, ord: 5, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/216/original/05_These_Walls.mp3')
