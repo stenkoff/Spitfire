@@ -55,6 +55,9 @@ class AlbumShow extends React.Component {
                 </Link>
               </h2>
               <h3>{songs}</h3>
+              <button
+                className='play-tracks-btn'
+                onClick={this.playTracks}>PLAY</button>
             </div>
           </div>
 

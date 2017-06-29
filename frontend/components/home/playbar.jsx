@@ -5,7 +5,7 @@ import { skip } from '../../actions/audio_actions';
 class PlayBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { play: false, nowPlaying: 0, progress: 0 };
+    this.state = { play: false, nowPlaying: 0, progress: 0, track: null };
     this.togglePlay = this.togglePlay.bind(this);
     this.audioPlayer = this.audioPlayer.bind(this);
     this.duration = this.duration.bind(this);
@@ -15,6 +15,7 @@ class PlayBar extends React.Component {
     this.progressTime = this.progressTime.bind(this);
     this.progressBar = this.progressBar.bind(this);
     this.progress = this.progress.bind(this);
+    this.nowPlaying = this.nowPlaying.bind(this);
 
   }
 
@@ -76,12 +77,7 @@ class PlayBar extends React.Component {
     let sec = ('00' + Math.floor(time % 60)).slice(-2)
     return (`${min}:${sec}`);
   }
-  // play() {
-  //   for (let i = 0; i < this.props.queue.length; i++) {
-  //     this.props.queue[i]
-  //     setState({ nowPlaying: i })
-  //   }
-  // }
+
   skip() {
     if (this.state.nowPlaying < this.props.queue.length) {
       this.setState({ nowPlaying: this.state.nowPlaying + 1 })
@@ -97,7 +93,7 @@ class PlayBar extends React.Component {
   }
 
   componentWillReceiveProps() {
-    this.setState({ play: true })
+    this.setState({ play: true, nowPlaying: 0 })
   }
 
   progress() {
@@ -134,6 +130,26 @@ class PlayBar extends React.Component {
     return ( <div className='progress' style={barStyle}></div> );
   }
 
+  nowPlaying() {
+    if (this.music) {
+      let track = this.props.queue[this.state.nowPlaying]
+      return (
+        <div className='now-playing'>
+          <img className = 'album-art'
+            src={this.props.albums[track.album_id].image_url}/>
+          <div className='now-info'>
+            <div className='now-title'>{track.title}</div>
+            <div className='now-artist'>{track.artist}</div>
+          </div>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  }
+
+  // volumeBar()
+
   render() {
     // let playbtn = (this.state.play===true) ? "fa fa fa-pause" : "fa fa-2x fa-play-circle-o";
     let duration = this.duration();
@@ -145,7 +161,10 @@ class PlayBar extends React.Component {
       return (
         <section className='playbar'>
           <section className='playbar-items'>
-          <div className='playbar-left'></div>
+          <div className='playbar-left'>
+            <div>{this.nowPlaying()}</div>
+            <div>{}</div>
+          </div>
           <div className='playbar-middle'>
 
             <div className='controls'>
@@ -183,9 +202,10 @@ class PlayBar extends React.Component {
 }
 
 
-const mapStateToProps = state => {
+const mapStateToProps = ({queue, albums}) => {
   return {
-    queue: state.queue
+    queue,
+    albums
   };
 };
 // const mapDispatchToProps = dispatch => {

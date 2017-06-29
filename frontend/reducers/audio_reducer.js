@@ -12,9 +12,10 @@ const AudioReducer = (state = [], action) => {
       // newState = queue: [action.track]
       return newState;
     case RECEIVE_SONGS:
-      newState = state.slice();
-      newState = newState.concat(action.tracks);
-      return newState;
+      // newState = state.slice();
+      // newState = newState.concat(action.tracks);
+      // return newState;
+      return action.tracks;
     case RECEIVE_CURRENT_USER:
       return [];
     case SKIP:

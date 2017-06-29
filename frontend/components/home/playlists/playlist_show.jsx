@@ -35,10 +35,9 @@ class PlaylistShow extends React.Component {
       e.preventDefault();
       const playlisting = {
         playlist_id: this.props.playlist.id,
-        playlist_ord: track.playlist_ord
+        track_id: track.id
       }
       this.props.removeTrack(playlisting)
-        .then(this.props.fetchPlaylist(this.props.playlist.id))
     }
   }
 
@@ -79,6 +78,10 @@ class PlaylistShow extends React.Component {
             <h2>By {this.props.playlist.creator}</h2>
             <h3>{songs}</h3>
             <button
+              className='play-tracks-btn'
+              onClick={this.playTracks}>PLAY</button>
+            <button
+              className='delete-playlist'
               onClick={(e) => this.deletePlaylist(e)}>DELETE</button>
           </div>
       </div>

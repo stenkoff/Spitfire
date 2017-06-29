@@ -34,9 +34,15 @@
   padding: 25px;
   background-color: rgba(0,0,0,.5);
   overflow: auto;
+
   // position: fixed;
   // bottom: 0;
   // padding-bottom: 100px;
+
+  position: sticky;
+  top: 0;
+  height: 100%;
+  max-height: calc(100vh - 140px);
 }
 
 .sidebar-top {

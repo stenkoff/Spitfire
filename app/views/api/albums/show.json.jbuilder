@@ -8,7 +8,7 @@ end
 json.tracks do
   @album.tracks.each do |track|
     json.set! track.id do
-      json.extract! track, :title, :id
+      json.extract! track, :title, :id, :album_id
       json.audio asset_path(track.audio.url)
     end
   end

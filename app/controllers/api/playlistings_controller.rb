@@ -17,7 +17,7 @@ class Api::PlaylistingsController < ApplicationController
 
   def kill
     @playlist = Playlist.find(params[:playlist_id].to_i)
-    @playlist.tracks[params[:playlist_ord].to_i].delete
+    @playlist.playlistings.where(track_id: params[:track_id].to_i).destroy_all
     render "api/playlists/show"
   end
 

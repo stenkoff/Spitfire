@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchArtist } from '../../../actions/artist_actions';
+import { addTrack } from '../../../actions/playlist_actions';
+import AddTrack from '../playlists/add_track';
+import { receiveSong, receiveSongs } from '../../../actions/audio_actions';
 
 class ArtistShow extends React.Component {
   constructor(props) {
@@ -17,27 +20,55 @@ class ArtistShow extends React.Component {
     }
   }
 
+  playTrack(track) {
+    return (e) => {
+      e.preventDefault();
+      this.props.playTrack(track);
+    }
+  }
+
+  playTracks(e) {
+      e.preventDefault();
+      this.props.playTracks(this.props.tracks);
+  }
+
   render() {
-    if (this.props.tracks) {
+    if (this.props.tracks && this.props.artist.name)  {
+    let tracks = this.props.tracks
       return (
         <section className='artist'>
           <div>
             <img className ='artist-image'
               src={this.props.artist.image_url}/>
             </div>
+          <div id='artist-info'>{this.props.artist.name}</div>
+          <div id='popular'>Popular Tracks</div>
 
-        <div className='artist-tracks'>
-          <h2>Popular</h2>
-          <h1>{this.props.artist.name}</h1>
-          <ol >
-            {
-              this.props.tracks.slice(5).map((track,idx) =>
-                <li><div key={idx}>{track.title}</div></li>)
-              }
 
-          </ol>
-        </div>
-        </section>
+
+            <div className='artist-tracks'>
+              <ol >
+                {
+                  tracks.map((track, i) =>
+                    <li key={i}>
+                        <div  className='artist-tracks-left'>
+                          <p className='num'>{i+1}.</p>
+                            <p className='artist-tracks-btn' onClick={this.playTrack(track)}></p>
+                        </div>
+                        <div className='artist-track-info'>
+                          <h1>{track.title}</h1>
+                          <h2>{this.props.artist.name}</h2>
+                        </div>
+                      <div  className='artist-tracks-right'>
+                        <div className='artist-options'>
+                        <AddTrack track={track}/>
+                      </div>
+                      </div>
+                  </li>)
+                }
+              </ol>
+            </div>
+      </section>
       );
     } else {
       return null;
@@ -59,7 +90,10 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchArtist: id => dispatch(fetchArtist(id))
+    fetchArtist: id => dispatch(fetchArtist(id)),
+    addTrack: playlisting => dispatch(addTrack(playlisting)),
+    playTrack: track => dispatch(receiveSong(track)),
+    playTracks: tracks => dispatch(receiveSongs(tracks))
   };
 };
 
@@ -67,3 +101,15 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps)
 (ArtistShow);
+
+// {/* <div className='artist-tracks'>
+//   <h2>Popular</h2>
+//   <h1>{this.props.artist.name}</h1>
+//   <ol >
+//     {
+//       this.props.tracks.slice(5).map((track,idx) =>
+//         <li><div key={idx}>{track.title}</div></li>)
+//       }
+//
+//   </ol>
+// </div> */}
