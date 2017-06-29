@@ -19,7 +19,7 @@ Album.destroy_all
 Playlist.destroy_all
 Playlisting.destroy_all
 
-User.create(username: 'demo', password: 'password')
+# User.create(username: 'demo', password: 'password')
 
 chance = Artist.create(name: 'Chance the Rapper', image: File.open('app/assets/images/chance.png'))
 cb = Album.create(name: 'Coloring Book', artist_id: chance.id, image: File.open('app/assets/images/chance.png'))
