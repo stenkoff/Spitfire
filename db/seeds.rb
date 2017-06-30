@@ -118,7 +118,7 @@ Track.create!(title: 'Low Life', album_id: evol.id, ord: 1, audio: File.open("ht
 #
 travis = Artist.create!(name: 'Travis Scott', image: File.open('app/assets/images/travis.jpg'))
 birds = Album.create!(name: 'Birds in the Trap Sings McKnight', artist_id: travis.id, image: File.open('app/assets/images/birds.png'))
-Track.create!(title: 'Goosebumps', album_id: birds.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/292/original/09_goosebumps.mp3?1498838266"
+Track.create!(title: 'Goosebumps', album_id: birds.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/292/original/09_goosebumps.mp3?1498838266")
 #
 paak = Artist.create!(name: 'Anderson .Paak', image: File.open('app/assets/images/paak.jpg'))
 malibu = Album.create!(name: 'Malibu', artist_id: paak.id, image: File.open('app/assets/images/malibu.jpg'))
