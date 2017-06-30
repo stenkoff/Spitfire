@@ -74,7 +74,7 @@ Track.create!(title: 'The Recipe (Feat. Dr Dre)', album_id: gkmc.id, ord: 12, au
 Track.create!(title: 'Black Boy Fly (Bonus Track)', album_id: gkmc.id, ord: 13, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/244/original/13_-_The_Recipe_%28Feat._Dr_Dre%29_%28Bonus_Track%29.mp3")
 Track.create!(title: 'Now Or Never (Feat. Mary J. Blige)', album_id: gkmc.id, ord: 14, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/245/original/15_-_Now_Or_Never_%28Feat._Mary_J._Blige%29_%28Bonus_Track%29.mp3")
 
-damn = Album.create!(name: 'DAMN.', artist_id: kendrick.id, image: File.open('app/assets/images/damn/png'))
+damn = Album.create!(name: 'DAMN.', artist_id: kendrick.id, image: File.open('app/assets/images/damn.png'))
 
 Track.create!(title: 'BLOOD.', album_id: damn.id, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/246/original/01_BLOOD..mp3")
 Track.create!(title: 'DNA.', album_id: damn.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/247/original/02_DNA..mp3")
