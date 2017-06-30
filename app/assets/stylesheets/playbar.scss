@@ -10,21 +10,35 @@
   // left: 0px;
 }
 //
-.playbar-items {
+.pb-container{
   // display: flex;
   // justify-content: center;
   // align-items: center;
-  // flex-direction: column;
-  height: 100%;
-  width: 100%;
+  flex-direction: column;
+  // height: 100%;
+  // width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: auto;
+    // min-width: 620px;
+}
+
+.playbar-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+  // flex-direction: column;
+  justify-content: space-between;
+  padding: 0 16px;
+  width: 100%;
 }
 
 .playbar-left {
   width: 30%;
   min-width: 180px;
+  // margin-right: 1px;
 }
 
 .now-playing {
@@ -78,6 +92,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 200px;
 }
 
 .controls {
@@ -113,15 +128,15 @@ flex-wrap: nowrap;
   // bottom: 15px;
   // position: absolute;
 }
-.progress-bar__bg {
-background-color: #404040;
-border-radius: 2px;
-// display: -webkit-box;
-// display: -ms-flexbox;
-display: flex;
-height: 4px;
-width: 100%;
-}
+// .progress-bar__bg {
+// background-color: #404040;
+// border-radius: 2px;
+// // display: -webkit-box;
+// // display: -ms-flexbox;
+// display: flex;
+// height: 4px;
+// width: 100%;
+// }
 .playbar-bottom {
   width: 100%;
   display: flex;
@@ -131,18 +146,14 @@ width: 100%;
 }
 .progress {
   border-radius: 20px;
+  height: 4px;
+  background-color: #1db954;
 }
 .slider {
   font-size: 10px;
 }
 
-.playbar-right {
-  width: 30%;
-  min-width: 180px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
+
 #play {
   // border: 1px solid;
   border-radius: 90px;
@@ -188,6 +199,62 @@ width: 100%;
 #previous:hover, #skip:hover {
   color: white;
   cursor: pointer;
+}
+.playbar-right {
+  width: 30%;
+  min-width: 180px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  // vertical-align: middle;
+  // align-content: center;
+}
+
+.vol-controls {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+  // border-bottom: 1px solid #404040;
+}
+.vol-bar {
+  background-color: #404040;
+  width: 200px;
+  height: 4px;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  cursor: pointer;
+
+  // vertical-align: middle;
+  // border-bottom: 1px solid #404040;
+}
+
+.vol-progress {
+  // width: 50%;
+  background-color: #a0a0a0;
+  height: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  &:hover {
+    background-color: #1db954;
+  }
+  // vertical-align: baseline;
+}
+
+.vol-icon {
+  color: #a0a0a0;
+  padding-right: 5px;
+
+}
+
+.slider {
+  position: relative;
+  right: 3px;
+  color: #fff;
+
 }
 // .fa, .fa-2x
 // sidbar: z-index 100

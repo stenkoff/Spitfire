@@ -25,12 +25,13 @@
   vertical-align: middle;
   display: flex;
   align-items: center;
-  padding-left: 40px;
+  // padding-left: 40px;
+  justify-content: center;
 }
 
 .new-playlist-name input {
   background-color: inherit;
-  width: 100%;
+  width: 60%;
   font-size: 54px;
   color: #fff;
   font-family: 'Proxima Nova', sans-serif;
@@ -117,10 +118,10 @@
   // width: 32px;
   color: white;
   padding: 0;
-  font-size: 70px;
+  font-size: 50px;
   text-align: center;
   vertical-align: middle;
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
 }
 .new-playlist-form2 {
   display: flex;
@@ -130,6 +131,7 @@
   background-color: transparent;
   width: 100%;
   justify-content: center;
+  min-width: 500px;
 }
 .modal-buttons2 {
   padding-top: 40px;

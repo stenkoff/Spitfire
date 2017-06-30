@@ -2,7 +2,7 @@ import * as APIUtil from '../util/search_api_util';
 
 export const RECEIVE_SEARCH = 'RECEIVE_SEARCH';
 
-export const recieveSearch = results => {
+export const receiveSearch = results => {
   return {
     type: RECEIVE_SEARCH,
     results
@@ -11,7 +11,5 @@ export const recieveSearch = results => {
 
 export const fetchSearch = search => dispatch => {
   return APIUtil.search(search)
-    .then(results => dispatch(recieveSearch(results)));
+    .then(results => dispatch(receiveSearch(results)));
 };
-
-window.fetchSearch = fetchSearch;

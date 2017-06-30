@@ -22,11 +22,11 @@ class AddTrack extends React.Component {
       <section  className='main'>
 
         <div>
-          <button className='new-playlist' onClick={()=>this.openModal()}>Add to Playlist</button>
+          <button className='add-btn' onClick={()=>this.openModal()}>+</button>
           <AddTrackModal isOpen={this.state.modal} onClose={() => this.closeModal()}>
             <div className='add-to-playlist'>
-              <button id='close-button' onClick={() => this.closeModal()}>x</button>
-              <h1>Add to playlist</h1>
+              <button id='close-button' onClick={() => this.closeModal()}>×</button>
+              <h1 id='add-to-pl-header'>Add to playlist</h1>
             </div>
               <section className='playlist-options'>
                 {

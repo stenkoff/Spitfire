@@ -101,30 +101,33 @@ class Search extends React.Component {
              }
            </section>
 
-           <div className='pl-tracks'>
+           <section className='search-tracks-container'>
+           <div className='artist-tracks'>
              <ol >
                {
                  tracks.map((track, i) =>
                    <li key={i}>
-                       <div  className='pl-tracks-left'>
+                       <div  className='artist-tracks-left'>
                          <p className='num'>{i+1}.</p>
-                           <p className='pl-tracks-btn' onClick={this.playTrack(track)}></p>
+                           <p className='artist-tracks-btn' onClick={this.playTrack(track)}></p>
                        </div>
-                       <div className='track-info'>
+                       <div className='artist-track-info'>
                          <h1>{track.title}</h1>
                          <h2>{track.artist}</h2>
                        </div>
-                     <div  className='pl-tracks-right'>
-                       <div className='pl-options'>
-                       <AddTrack track={track}/>
+                     <div  className='artist-tracks-right'>
+                       <div className='artist-options'>
+                       <AddTrack className='add-to-pl' track={track}/>
                      </div>
                      </div>
                  </li>)
                }
              </ol>
            </div>
+           </section>
          </div>
         </section>
+
     );
   }
 }

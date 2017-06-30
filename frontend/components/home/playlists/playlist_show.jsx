@@ -53,13 +53,6 @@ class PlaylistShow extends React.Component {
       this.props.playTracks(this.props.tracks);
   }
 
-  // mouseOver() {
-  //   this.setState({play: <i onClick= {this.playTrack} className="fa fa-play" aria-hidden="true"></i> });
-  // }
-  // mouseOut(i) {
-  //   this.setState({play: ''});
-  // }
-
   render() {
     if (this.props.tracks && this.props.playlist.name) {
       let length = this.props.tracks.length;
@@ -90,22 +83,23 @@ class PlaylistShow extends React.Component {
         {
           this.props.tracks.map((track, i) =>
             <li key={i}>
-                <div  className='pl-tracks-left'>
-                  <p className='num'>{i+1}.</p>
-                    <p className='pl-tracks-btn' onClick={this.playTrack(track)}></p>
-                  </div>
+              <div  className='pl-tracks-left'>
+                <p onClick={this.playTrack(track)}
+                  className='num'>{i+1}.</p>
+                  <p className='pl-tracks-btn' onClick={this.playTrack(track)}></p>
 
-                <div className='track-info'>
-                  <h1>{track.title}</h1>
-                  <h2><Link to={`/artists/${track.artist_id}`}>{track.artist}</Link></h2>
-              </div>
-              <div  className='pl-tracks-right'>
-                <nav className='track-dropdown'>...</nav>
-                <div className='pl-options'>
-                  <AddTrack className='add-to-pl' track={track}/>
-                  <button className= 'remove-from-pl' onClick={this.removeTrack(track)}>Remove From Playlist</button>
                 </div>
+
+              <div className='track-info'>
+                <h1>{track.title}</h1>
+                <h2><Link to={`/artists/${track.artist_id}`}>{track.artist}</Link></h2>
+            </div>
+            <div  className='pl-tracks-right'>
+              <div className='pl-options'>
+                <AddTrack className='add-to-pl' track={track}/>
+                <button className= 'remove-from-pl' onClick={this.removeTrack(track)}><i className="fa fa-trash-o" aria-hidden="true"></i></button>
               </div>
+            </div>
           </li>)
           }
       </ol>

@@ -40,3 +40,15 @@
   background: #0b0b0b;
   height: 100%;
 }
+
+.search-tracks-container {
+  display: flex;
+  justify-content: center;
+  // padding-bottom: 30px;
+}
+h1.search-tracks-container {
+  padding-left: 20px;
+}
+h2.search-tracks-container {
+  padding-left: 20px;
+}

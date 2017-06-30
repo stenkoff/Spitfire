@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link, Redirect } from 'react-router-dom';
+import { Switch, Route, Link, Redirect, NavLink } from 'react-router-dom';
 import PlaylistsContainer from './playlists/playlists_container';
 import PlaylistShow from './playlists/playlist_show';
 import Albums from './albums/albums';
@@ -16,9 +16,9 @@ const MusicNav = () => {
   <div className='music'>
   <section className='playlist-header'>
     <ul className='music-bar'>
-      <li><Link to='/playlists' id='music'>PLAYLISTS</Link></li>
-      <li><Link to='/artists' id='music'>ARTISTS</Link></li>
-      <li><Link to='/albums' id='music'>ALBUMS</Link></li>
+      <li><NavLink to='/playlists' activeClassName='music-nav-active' id='music'>PLAYLISTS</NavLink></li>
+      <li><NavLink to='/artists' activeClassName='music-nav-active' id='music'>ARTISTS</NavLink></li>
+      <li><NavLink to='/albums' activeClassName='music-nav-active' id='music'>ALBUMS</NavLink></li>
     </ul>
   </section>
     <Switch>

@@ -27,7 +27,24 @@
   &:hover {
     color: white;
   }
+  &:after {
+    content: "";
+    height: 2px;
+    width: 18px;
+    position: relative;
+    top: .5em;
+    display: block;
+    margin: 0 auto;
+  }
+  &:hover:after {
+    background-color: #1ed760;
+  }
+  // &:active {
+  //   border-bottom: 2px solid #1ed660;
+  //
+  // }
 }
+
 
 // .music-bar li::before {
 //   content: "";

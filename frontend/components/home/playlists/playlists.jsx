@@ -24,7 +24,7 @@ class Playlists extends React.Component {
             <button onClick={()=>this.openModal()}>NEW PLAYLIST</button>
             <Modal className='new-playlist-form' isOpen={this.state.modal} onClose={() => this.closeModal()}>
                 <div className='new-playlist-top'>
-                <button id='close-button2' onClick={() => this.closeModal()}>×</button>
+                <button id='close-button2' onClick={() => this.closeModal()}>✕</button>
                 <h1>Create new playlist</h1>
               </div>
                 <label className='new-playlist-name'>

@@ -5,7 +5,7 @@ import { skip } from '../../actions/audio_actions';
 class PlayBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { play: false, nowPlaying: 0, progress: 0, track: null };
+    this.state = { play: false, nowPlaying: 0, progress: 0, track: null, volume: 100 };
     this.togglePlay = this.togglePlay.bind(this);
     this.audioPlayer = this.audioPlayer.bind(this);
     this.duration = this.duration.bind(this);
@@ -16,6 +16,8 @@ class PlayBar extends React.Component {
     this.progressBar = this.progressBar.bind(this);
     this.progress = this.progress.bind(this);
     this.nowPlaying = this.nowPlaying.bind(this);
+    this.volume = this.volume.bind(this);
+    this.volumeProgress = this.volumeProgress.bind(this);
 
   }
 
@@ -38,9 +40,10 @@ class PlayBar extends React.Component {
       let time = this.music.duration
       let min = Math.floor(time / 60)
       let sec = ('00' + Math.floor(time % 60)).slice(-2)
-      return (`${min}:${sec}`);
+      time = `${min}:${sec}`;
+      return time;
     } else {
-      return null;
+      return '0:00';
     }
   }
 
@@ -82,7 +85,7 @@ class PlayBar extends React.Component {
     if (this.state.nowPlaying < this.props.queue.length) {
       this.setState({ nowPlaying: this.state.nowPlaying + 1 })
     } else {
-      this.setState({ nowPlaying: 0, play: false})
+      this.setState({ nowPlaying: 0, play: false, progress: 0})
     }
   }
 
@@ -92,8 +95,10 @@ class PlayBar extends React.Component {
     }
   }
 
-  componentWillReceiveProps() {
-    this.setState({ play: true, nowPlaying: 0 })
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.queue.lenth > 0) {
+      this.setState({ play: true, nowPlaying: 0 })
+    }
   }
 
   progress() {
@@ -119,14 +124,9 @@ class PlayBar extends React.Component {
     }
     let barStyle = {
       width: `${progress}%`,
-      border: '2px solid #1db954',
+      // border: '2px solid #1db954',
       // bottom: '10px'
     }
-    let progressSlider = {
-      // position: 'absolute'
-
-    }
-
     return ( <div className='progress' style={barStyle}></div> );
   }
 
@@ -148,7 +148,22 @@ class PlayBar extends React.Component {
     }
   }
 
-  // volumeBar()
+  volume(e) {
+    let progress = e.nativeEvent.offsetX;
+    this.setState({volume: progress});
+  }
+
+  volumeProgress() {
+    if (this.music) {
+      this.music.volume = (this.state.volume/200)
+    }
+    let volStyle = {
+      width: `${this.state.volume}px`,
+    }
+    return (
+        <div style={volStyle} className='vol-progress'></div>
+    );
+  }
 
   render() {
     // let playbtn = (this.state.play===true) ? "fa fa fa-pause" : "fa fa-2x fa-play-circle-o";
@@ -160,7 +175,8 @@ class PlayBar extends React.Component {
 
       return (
         <section className='playbar'>
-          <section className='playbar-items'>
+          <section className='pb-container'>
+            <section className='playbar-items'>
           <div className='playbar-left'>
             <div>{this.nowPlaying()}</div>
             <div>{}</div>
@@ -191,8 +207,17 @@ class PlayBar extends React.Component {
             </div>
 
           </div>
-          <div className='playbar-right'></div>
+          <div className='playbar-right'>
+            <div className='vol-controls'>
 
+              <div className='vol-icon'><i className="fa fa-volume-down" aria-hidden="true"></i></div>
+
+                <div onClick={(e) => this.volume(e)} className='vol-bar'>{this.volumeProgress()}<p className='slider'>⬤</p></div>
+
+
+            </div>
+          </div>
+          </section>
 
       </section>
       </section>

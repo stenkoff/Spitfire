@@ -43,6 +43,9 @@ class ArtistShow extends React.Component {
             </div>
           <div id='artist-info'>{this.props.artist.name}</div>
           <div id='popular'>Popular Tracks</div>
+          <button
+            className='play-tracks-btn'
+            onClick={this.playTracks}>PLAY</button>
 
 
 
@@ -52,7 +55,8 @@ class ArtistShow extends React.Component {
                   tracks.map((track, i) =>
                     <li key={i}>
                         <div  className='artist-tracks-left'>
-                          <p className='num'>{i+1}.</p>
+                          <p onClick={this.playTrack(track)}
+                            className='num'>{i+1}.</p>
                             <p className='artist-tracks-btn' onClick={this.playTrack(track)}></p>
                         </div>
                         <div className='artist-track-info'>
@@ -61,7 +65,7 @@ class ArtistShow extends React.Component {
                         </div>
                       <div  className='artist-tracks-right'>
                         <div className='artist-options'>
-                        <AddTrack track={track}/>
+                        <AddTrack className='add-to-pl' track={track}/>
                       </div>
                       </div>
                   </li>)

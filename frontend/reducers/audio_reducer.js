@@ -4,23 +4,23 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 const AudioReducer = (state = [], action) => {
   Object.freeze(state)
-  let newState;
+  let newState = [];
   switch (action.type) {
     case RECEIVE_CURRENT_SONG:
-      newState = state.slice();
+      // newState = state.slice();
       newState.push(action.track)
       // newState = queue: [action.track]
       return newState;
     case RECEIVE_SONGS:
       // newState = state.slice();
-      // newState = newState.concat(action.tracks);
+      newState = newState.concat(action.tracks);
       // return newState;
-      return action.tracks;
+      return newState;
     case RECEIVE_CURRENT_USER:
       return [];
-    case SKIP:
-      newState = state.slice(1);
-      return newState;
+    // case SKIP:
+    //   newState = state.slice(1);
+    //   return newState;
     default:
       return state;
   }

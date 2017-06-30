@@ -67,7 +67,7 @@ class AlbumShow extends React.Component {
                 this.props.tracks.map((track, i) =>
                   <li key={i}>
                       <div  className='pl-tracks-left'>
-                        <p className='num'>{i+1}.</p>
+                        <p onClick={this.playTrack(track)} className='num'>{i+1}.</p>
                           <p className='pl-tracks-btn' onClick={this.playTrack(track)}></p>
                       </div>
                       <div className='track-info'>
@@ -75,7 +75,6 @@ class AlbumShow extends React.Component {
                         <h2>{this.props.album.artist}</h2>
                       </div>
                       <div  className='pl-tracks-right'>
-                        <nav className='track-dropdown'>...</nav>
                         <div className='pl-options'>
                           <AddTrack className='add-to-pl' track={track}/>
 

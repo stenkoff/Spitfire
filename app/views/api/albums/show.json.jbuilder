@@ -10,6 +10,7 @@ json.tracks do
     json.set! track.id do
       json.extract! track, :title, :id, :album_id
       json.audio asset_path(track.audio.url)
+      json.artist track.artist.name
     end
   end
 end
