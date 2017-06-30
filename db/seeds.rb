@@ -113,8 +113,8 @@ future = Artist.create!(name: 'Future', image: File.open('app/assets/images/futu
 mask = Album.create!(name: 'FUTURE', artist_id: future.id, image: File.open('app/assets/images/FUTURE.png'))
 Track.create!(title: 'Mask Off', album_id: mask.id, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/288/original/07_Mask_Off.mp3?1498836945")
 
-evol = Album.create!(name: 'EVOL', artist_id: future.id, image: File.open("app/assets/images/evol.png"))
-Track.create!(title: 'Low Life', album_id: evol.id, ord: 1, audio: File.open("http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/289/original/Future_EVOL_LowLife_10.mp3?1498837225"))
+# evol = Album.create!(name: 'EVOL', artist_id: future.id, image: File.open("app/assets/images/evol.png"))
+# Track.create!(title: 'Low Life', album_id: evol.id, ord: 1, audio: File.open("http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/289/original/Future_EVOL_LowLife_10.mp3?1498837225"))
 #
 travis = Artist.create!(name: 'Travis Scott', image: File.open('app/assets/images/travis.jpg'))
 birds = Album.create!(name: 'Birds in the Trap Sings McKnight', artist_id: travis.id, image: File.open('app/assets/images/birds.png'))
