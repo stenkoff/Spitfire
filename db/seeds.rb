@@ -93,7 +93,7 @@ Track.create!(title: 'DUCKWORTH.', album_id: damn.id, ord: 14, audio: "http://s3
 
 outkast = Artist.create!(name: 'Outkast', image: File.open('app/assets/images/outkast.jpg'))
 stankonia = Album.create!(name: 'stankonia', artist_id: outkast.id, image: File.open('app/assets/images/stankonia.png'))
-spkrbox = Album.create!(name: 'Speakerboxxx/The Love Below', artist_id: 25, image: File.open('app/assets/images/speakerbox:the love below.png'))
+spkrbox = Album.create!(name: 'Speakerboxxx/The Love Below', artist_id: outkast.id, image: File.open('app/assets/images/speakerbox:the love below.png'))
 
 Track.create!(title: 'Ms. Jackson', album_id: stankonia.id, ord: 1, audio:  "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/260/original/1-05_Ms._Jackson.mp3")
 Track.create!(title: 'Roses', album_id: spkrbox.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/260/original/1-05_Ms._Jackson.mp3")
