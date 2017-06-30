@@ -18,6 +18,7 @@ class PlayBar extends React.Component {
     this.nowPlaying = this.nowPlaying.bind(this);
     this.volume = this.volume.bind(this);
     this.volumeProgress = this.volumeProgress.bind(this);
+    this.startPlay = this.startPlay.bind(this);
 
   }
 
@@ -35,12 +36,18 @@ class PlayBar extends React.Component {
     }
   }
 
+  startPlay() {
+    this.setState({ play: true })
+  }
   duration() {
     if (this.music) {
+      if (!this.music.duration) {
+        return '0:00'
+      }
       let time = this.music.duration
       let min = Math.floor(time / 60)
       let sec = ('00' + Math.floor(time % 60)).slice(-2)
-      time = `${min}:${sec}`;
+      time = `${min}:${sec}`
       return time;
     } else {
       return '0:00';
@@ -53,6 +60,7 @@ class PlayBar extends React.Component {
           autoPlay
           onTimeUpdate={this.progress}
           // src={this.props.queue[i].audio}
+          onPlay={this.startPlay}
           src={this.props.queue[this.state.nowPlaying].audio}
           ref={(el)=> { this.music = el; }}
           onEnded={this.skip}>
@@ -67,7 +75,7 @@ class PlayBar extends React.Component {
     if (this.music) {
     return (this.music.currentTime / this.music.duration * 100)
   } else {
-    return '0'
+    return null
   }
   }
 
@@ -97,6 +105,12 @@ class PlayBar extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.queue.lenth > 0) {
+      this.setState({ play: true, nowPlaying: 0 })
+    }
+  }
+
+  componentDidMount() {
+    if (this.props.queue.lenth > 0) {
       this.setState({ play: true, nowPlaying: 0 })
     }
   }
@@ -131,6 +145,7 @@ class PlayBar extends React.Component {
   }
 
   nowPlaying() {
+    debugger
     if (this.music) {
       let track = this.props.queue[this.state.nowPlaying]
       return (
