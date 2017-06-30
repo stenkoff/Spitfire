@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // window.store = store;
-  window.dispatch = store.dispatch;
+  // window.dispatch = store.dispatch;
   // window.fetchPlaylist = fetchPlaylist;
   // window.fetchAlbum = fetchAlbum;
   const root = document.getElementById('root');
