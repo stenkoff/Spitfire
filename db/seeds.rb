@@ -96,8 +96,8 @@ stankonia = Album.create!(name: 'stankonia', artist_id: outkast.id, image: File.
 spkrbox = Album.create!(name: 'Speakerboxxx/The Love Below', artist_id: 25, image: File.open('app/assets/images/speakerbox:the love below.png'))
 
 Track.create!(title: 'Ms. Jackson', album_id: stankonia.id, ord: 1, audio:  "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/260/original/1-05_Ms._Jackson.mp3")
-Track.create!(title: 'Roses', album_id: outkast.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/260/original/1-05_Ms._Jackson.mp3")
-Track.create!(title: 'Hey Ya!', album_id: outkast.id, ord: 3, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/263/original/02_Hey_Ya!.m4a")
+Track.create!(title: 'Roses', album_id: spkrbox.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/260/original/1-05_Ms._Jackson.mp3")
+Track.create!(title: 'Hey Ya!', album_id: spkrbox.id, ord: 3, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/263/original/02_Hey_Ya!.m4a")
 
 
 wiz = Artist.create!(name: 'Wiz Khalifa', image: File.open('app/assets/images/wiz.jpg'))
