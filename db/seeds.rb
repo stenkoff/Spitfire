@@ -47,7 +47,7 @@ Track.create!(title: 'Institutionalized', album_id: tpab.id, ord: 4, audio: "htt
 Track.create!(title: 'These Walls', album_id: tpab.id, ord: 5, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/216/original/05_These_Walls.mp3')
 Track.create!(title: 'u', album_id: tpab.id, ord: 6, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/217/original/06_u.mp3')
 Track.create!(title: 'Alright', album_id: tpab.id, ord: 7, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/218/original/07_Alright.mp3')
-Track.create!(title: 'For Sale_ (Interlude)', album_id: tpab.id, ord: 8, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/219/original/08_For_Sale__(Interlude).mp3')
+# Track.create!(title: 'For Sale_ (Interlude)', album_id: tpab.id, ord: 8, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/219/original/08_For_Sale__(Interlude).mp3')
 Track.create!(title: 'Momma', album_id: tpab.id, ord: 9, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/220/original/09_Momma.mp3')
 Track.create!(title: 'Hood Politics', album_id: tpab.id, ord: 10, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/221/original/10_Hood_Politics.mp3')
 Track.create!(title: 'How Much A Dollar Cost', album_id: tpab.id, ord: 11, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/222/original/11_How_Much_A_Dollar_Cost.mp3')
