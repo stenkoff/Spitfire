@@ -31,12 +31,15 @@ class AlbumShow extends React.Component {
   }
 
   playTracks(e) {
+    if (this.props.tracks.length > 0) {
       e.preventDefault();
       this.props.playTracks(this.props.tracks);
+    }
   }
 
   render() {
-    // debugger
+    //
+
     if (this.props.tracks && this.props.album.name) {
       let length = this.props.tracks.length;
       let songs = length === 1 ? `${length} SONG` : `${length} SONGS`;

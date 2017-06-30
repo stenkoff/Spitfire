@@ -31,7 +31,9 @@ class ArtistShow extends React.Component {
 
   playTracks(e) {
       e.preventDefault();
-      this.props.playTracks(this.props.tracks);
+      if (this.props.tracks.length > 0) {
+        this.props.playTracks(this.props.tracks);
+      }
   }
 
   render() {
@@ -41,6 +43,7 @@ class ArtistShow extends React.Component {
         <section className='artist'>
           <div>
             <img className ='artist-image'
+              onClick={this.playTracks}
               src={this.props.artist.image_url}/>
             </div>
           <div id='artist-info'>{this.props.artist.name}</div>

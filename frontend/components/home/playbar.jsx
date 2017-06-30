@@ -49,6 +49,7 @@ class PlayBar extends React.Component {
       let sec = ('00' + Math.floor(time % 60)).slice(-2)
       time = `${min}:${sec}`
       return time;
+
     } else {
       return '0:00';
     }

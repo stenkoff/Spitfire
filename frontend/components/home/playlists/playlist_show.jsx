@@ -49,9 +49,18 @@ class PlaylistShow extends React.Component {
   }
 
   playTracks(e) {
+
+
+
+
+
+
+
     return (e) => {
       e.preventDefault();
-      this.props.playTracks(this.props.tracks);
+      if (this.peops.tracks.length > 0) {
+        this.props.playTracks(this.props.tracks);
+      }
     }
   }
 
