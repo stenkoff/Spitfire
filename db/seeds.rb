@@ -56,6 +56,78 @@ Track.create!(title: 'The Blacker the Berry', album_id: tpab.id, ord: 13, audio:
 Track.create!(title: "You Ain't Gotta Lie (Momma Said)", album_id: tpab.id, ord: 14, audio: "https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/225/original/14_You_Ain't_Gotta_Lie_(Momma_Said).mp3")
 Track.create!(title: 'i', album_id: tpab.id, ord: 15, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/226/original/15_i.mp3')
 Track.create!(title: 'Mortal Man', album_id: tpab.id, ord: 16, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/227/original/16_Mortal_Man.mp3')
-#
-# # Album.create!(name: 'DAMN.', artist_id: 20, )
-# https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/203/original/03_Summer_Friends.m4a
+
+gkmc = Album.create!(name: 'good kid, m.A.A.d city', artist_id: kendrick.id, image: File.open('app/assets/images/good_kid.png'))
+
+Track.create!(title: 'Sherane A.K.A. Master Splinters Daughter', album_id: gkmc.id, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/232/original/01_-_Sherane_A.K.A._Master_Splinters_Daughter.mp3")
+Track.create!(title: 'Bitch, Dant Kill My Vibe', album_id: gkmc.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/233/original/02_-_Bitch__Dant_Kill_My_Vibe.mp3")
+Track.create!(title: 'Backstreet Freestyle', album_id: gkmc, ord: 3, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/234/original/03_-_Backstreet_Freestyle.mp3")
+Track.create!(title: 'The Art Of Peer Pressure', album_id: gkmc, ord: 4, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/235/original/04_-_The_Art_Of_Peer_Pressure.mp3")
+Track.create!(title: 'Money Trees (Feat. Jay Rock)', album_id: gkmc, ord: 5, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/236/original/05_-_Money_Trees_%28Feat._Jay_Rock%29.mp3")
+Track.create!(title: 'Poetic Justice (Feat. Drake)', album_id: gkmc, ord: 6, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/237/original/06_-_Poetic_Justice_%28Feat._Drake%29.mp3")
+Track.create!(title: 'Good Kid', album_id: gkmc, ord: 7, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/238/original/07_-_Good_Kid.mp3")
+Track.create!(title: 'M.A.A.D City (Feat. MC Eiht)', album_id: gkmc, ord: 8, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/239/original/08_-_M.A.A.D_City_%28Feat._MC_Eiht%29.mp3")
+Track.create!(title: 'Swimming Pools (Drank)', album_id: gkmc, ord: 9, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/240/original/09_-_Swimming_Pools_%28Drank%29_%28Extended_Version%29.mp3")
+Track.create!(title: 'Sing About Me, Im Dying Of Thirst', album_id: gkmc, ord: 10, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/241/original/10_-_Sing_About_Me__Im_Dying_Of_Thirst.mp3")
+Track.create!(title: 'Real (Feat. Anna Wise of Sonnymoon)', album_id: gkmc, ord: 11, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/242/original/11_-_Real_%28Feat._Anna_Wise_Of_Sonnymoon%29.mp3")
+Track.create!(title: 'The Recipe (Feat. Dr Dre)', album_id: gkmc, ord: 12, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/243/original/13_-_The_Recipe_%28Feat._Dr_Dre%29_%28Bonus_Track%29.mp3")
+Track.create!(title: 'Black Boy Fly (Bonus Track)', album_id: gkmc, ord: 13, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/244/original/13_-_The_Recipe_%28Feat._Dr_Dre%29_%28Bonus_Track%29.mp3")
+Track.create!(title: 'Now Or Never (Feat. Mary J. Blige)', album_id: gkmc, ord: 14, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/245/original/15_-_Now_Or_Never_%28Feat._Mary_J._Blige%29_%28Bonus_Track%29.mp3")
+
+damn = Album.create!(name: 'DAMN.', artist_id: kendrick.id, image: File.open('app/assets/images/damn/png'))
+
+Track.create!(title: 'BLOOD.', album_id: damn.id, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/246/original/01_BLOOD..mp3")
+Track.create!(title: 'DNA.', album_id: damn.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/247/original/02_DNA..mp3")
+Track.create!(title: 'YAH.', album_id: damn.id, ord: 3, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/247/original/02_DNA..mp3")
+Track.create!(title: 'ELEMENT.', album_id: damn.id, ord: 4, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/249/original/04_ELEMENT..mp3")
+Track.create!(title: 'FEEL.', album_id: damn.id, ord: 5, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/250/original/05_FEEL..mp3")
+Track.create!(title: 'LOYALTY. (FEAT. RIHANNA.)', album_id: damn.id, ord: 6, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/251/original/06_LOYALTY._%28FEAT._RIHANNA.%29.mp3")
+Track.create!(title: 'PRIDE.', album_id: damn.id, ord: 7, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/252/original/07_PRIDE..mp3")
+Track.create!(title: 'HUMBLE.', album_id: damn.id, ord: 8, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/253/original/08_HUMBLE..mp3")
+Track.create!(title: 'LUST.', album_id: damn.id, ord: 9, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/254/original/09_LUST..mp3")
+Track.create!(title: 'LOVE. (FEAT. ZACARI.)', album_id: damn.id, ord: 10, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/255/original/10_LOVE._%28FEAT._ZACARI.%29.mp3")
+Track.create!(title: 'XXX. (FEAT. U2.)', album_id: damn.id, ord: 11, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/256/original/11_XXX._%28FEAT._U2.%29.mp3")
+Track.create!(title: 'FEAR.', album_id: damn.id, ord: 12, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/257/original/12_FEAR..mp3")
+Track.create!(title: 'GOD.', album_id: damn.id, ord: 13, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/258/original/13_GOD..mp3")
+Track.create!(title: 'DUCKWORTH.', album_id: damn.id, ord: 14, "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/259/original/14_DUCKWORTH..mp3")
+
+outkast = Artist.create!(name: 'Outkast', image: File.open('app/assets/images/outkast.jpg'))
+stankonia = Album.create!(name: 'stankonia', artist_id: outkast.id, image: File.open('app/assets/images/stankonia.png'))
+spkrbox = Album.create!(name: 'Speakerboxxx/The Love Below', artist_id: 25, image: File.open('app/assets/images/speakerbox:the love below.png'))
+
+Track.create!(title: 'Ms. Jackson', album_id: stankonia.id, ord 1:, audio:  "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/260/original/1-05_Ms._Jackson.mp3")
+Track.create!(title: 'Roses', album_id: outkast.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/260/original/1-05_Ms._Jackson.mp3")
+Track.create!(title: 'Hey Ya!', album_id: outkast.id, ord: 3, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/263/original/02_Hey_Ya!.m4a")
+
+
+wiz = Artist.create!(name: 'Wiz Khalifa', image: File.open('app/assets/images/wiz.jpg'))
+rolling = Album.create!(name: 'Rolling Papers', artist_id: wiz.id, image: File.open('app/assets/images/Rolling Papers.png'))
+Track.create!(title: 'Black and Yellow', album_id: rolling.id, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/263/original/02_Hey_Ya!.m4a")
+
+cudi = Artist.create!(name: 'Kid Cudi', image: File.open('/Users/shenkoff/Desktop/fullstack/Spitfire/app/assets/images/kid-cudi-1.jpg'))
+moon = Album.create!(name: 'Man On The Moon', artist_id: cudi.id, image: File.open('app/assets/images/moon.jpg'))
+Track.create!(title: 'Up Up & Away', album_id: 29, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/265/original/up_up_and_away.mp3")
+Track.create!(title: 'Pursuit of Happiness (Nightmare)', album_id: 29, ord: 2, audio:  "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/265/original/up_up_and_away.mp3")
+
+future = Artist.create!(name: 'Future', image: File.open('/Users/shenkoff/Desktop/fullstack/Spitfire/app/assets/images/future2.jpg'))
+mask = Album.create!(name: 'FUTURE', artist_id: future.id, image: File.open('app/assets/images/FUTURE.png'))
+Track.create!(title: 'Mask Off', album_id: mask.id, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/267/original/07_Mask_Off.mp3")
+evol = Album.create!(name: 'EVOL', artist_id: future.id, image: File.open('app/assets/images/evol.png'))
+Track.create!(title: 'Low Life', album_id: evol.id, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/268/original/10_Low_Life.mp3")
+
+travis = Artist.create!(name: 'Travis Scott', image: File.open('app/assets/images/travis.jpg'))
+birds = Album.create!(name: 'Birds in the Trap Sings McKnight', artist_id: travis.id, image: File.open('app/assets/images/birds.png'))
+Track.create!(title: 'Goosebumps', album_id: birds.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/276/original/09_goosebumps.mp3")
+
+paak = Artist.create!(name: 'Anderson .Paak', image: File.open('app/assets/images/paak.jpg'))
+malibu = Album.create!(name: 'Malibu', artist_id: paak.id, image: File.open('app/assets/images/malibu.jpg'))
+Track.create!(title: 'The Season/Carry Me', album_id: malibu.id, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/270/original/01_The_Season_Carry_Me_%28Explicit%29.mp3")
+
+ten = Album.create!(name: '10 Day', artist_id: 23, image: File.open('app/assets/images/10day.jpg'))
+Track.create!(title: '14400 Minutes', album_id: ten.id, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/271/original/01_-_14400_Minutes__prod_by_DJ_SuchNSuch_.mp3")
+Track.create!(title: 'Nostalgia', album_id: ten.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/272/original/02_-_Nostalgia.mp3")
+Track.create!(title: 'Missing You', album_id: ten.id, ord: 3, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/273/original/03_-_Missing_You__prod_by_Thomas_Foolery_.mp3")
+Track.create!(title: 'Windows', album_id: ten.id, ord: 4, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/274/original/04_-_Windows_%28Ft_Alex_Wiley_and_Akenya_Seymour%29.mp3")
+Track.create!(title: 'Brain Cells', album_id: ten.id, ord: 5, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/275/original/05_-_Brain_Cells__prod_by_Peter_Cottontale_.mp3")
+Track.create!(title: 'Long Time', album_id: ten.id, ord: 6, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/277/original/06_-_Long_Time.mp3")
+Track.create!(title: '22 Offs', album_id: ten.id, ord: 7, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/278/original/07_-_22_Offs.mp3")
