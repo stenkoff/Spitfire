@@ -13,11 +13,11 @@
 #   t.datetime "created_at", null: false
 #   t.datetime "updated_at", null: false
 # end
-# Track.destroy_all
-# Artist.destroy_all
-# Album.destroy_all
-# Playlist.destroy_all
-# Playlisting.destroy_all
+Track.destroy_all
+Artist.destroy_all
+Album.destroy_all
+Playlist.destroy_all
+Playlisting.destroy_all
 
 # User.create(username: 'demo', password: 'password')
 

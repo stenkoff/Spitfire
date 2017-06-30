@@ -132,7 +132,7 @@ class Search extends React.Component {
   }
 }
 
-const mapDispatchToProps = state => {
+const mapDispatchToProps = (dispatch, ownProp) => {
   return {
     fetchSearch: search => dispatch(fetchSearch(search)),
     playTrack: track => dispatch(receiveSong(track))
