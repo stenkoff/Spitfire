@@ -21,8 +21,8 @@ Playlisting.destroy_all
 
 # User.create(username: 'demo', password: 'password')
 
-chance = Artist.create!(name: 'Chance the Rapper', image: File.open('app/assets/images/chance.png'))
-cb = Album.create!(name: 'Coloring Book', artist_id: chance.id, image: File.open('app/assets/images/chance.png'))
+chance = Artist.create!(name: 'Chance the Rapper', image: "https://s3.amazonaws.com/spitfire-dev/albums/images/000/000/035/original/chance.png")
+cb = Album.create!(name: 'Coloring Book', artist_id: chance.id, image: 	"https://s3.amazonaws.com/spitfire-dev/albums/images/000/000/035/original/chance.png")
 Track.create!(title: 'All We Got', album_id: cb.id, ord: 1, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/201/original/01_All_We_Got.m4a')
 Track.create!(title: 'No Problem', album_id: cb.id, ord: 2, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/202/original/02_No_Problem.m4a')
 Track.create!(title: 'Summer Friends', album_id: cb.id, ord: 3, audio: 'https://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/203/original/03_Summer_Friends.m4a')
