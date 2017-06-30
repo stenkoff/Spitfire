@@ -104,7 +104,7 @@ wiz = Artist.create!(name: 'Wiz Khalifa', image: File.open('app/assets/images/wi
 rolling = Album.create!(name: 'Rolling Papers', artist_id: wiz.id, image: File.open('app/assets/images/Rolling Papers.png'))
 Track.create!(title: 'Black and Yellow', album_id: rolling.id, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/263/original/02_Hey_Ya!.m4a")
 
-cudi = Artist.create!(name: 'Kid Cudi', image: File.open('/Users/shenkoff/Desktop/fullstack/Spitfire/app/assets/images/kid-cudi-1.jpg'))
+cudi = Artist.create!(name: 'Kid Cudi', image: File.open('app/assets/images/kid-cudi-1.jpg'))
 moon = Album.create!(name: 'Man On The Moon', artist_id: cudi.id, image: File.open('app/assets/images/moon.jpg'))
 Track.create!(title: 'Up Up & Away', album_id: 29, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/265/original/up_up_and_away.mp3")
 Track.create!(title: 'Pursuit of Happiness (Nightmare)', album_id: 29, ord: 2, audio:  "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/265/original/up_up_and_away.mp3")
