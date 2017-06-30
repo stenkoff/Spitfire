@@ -114,11 +114,11 @@ mask = Album.create!(name: 'FUTURE', artist_id: future.id, image: File.open('app
 Track.create!(title: 'Mask Off', album_id: mask.id, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/288/original/07_Mask_Off.mp3?1498836945")
 
 evol = Album.create!(name: 'EVOL', artist_id: future.id, image: File.open('app/assets/images/evol.png'))
-Track.create!(title: 'Low Life', album_id: evol.id, ord: 1, audio: File.open("app/assets/tracks/Future_EVOL_LowLife_10.mp3"))
+Track.create!(title: 'Low Life', album_id: evol.id, ord: 1, audio: File.open("http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/289/original/Future_EVOL_LowLife_10.mp3?1498837225"))
 #
 travis = Artist.create!(name: 'Travis Scott', image: File.open('app/assets/images/travis.jpg'))
 birds = Album.create!(name: 'Birds in the Trap Sings McKnight', artist_id: travis.id, image: File.open('app/assets/images/birds.png'))
-Track.create!(title: 'Goosebumps', album_id: birds.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/289/original/Future_EVOL_LowLife_10.mp3?1498837225")
+Track.create!(title: 'Goosebumps', album_id: birds.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/292/original/09_goosebumps.mp3?1498838266"
 #
 paak = Artist.create!(name: 'Anderson .Paak', image: File.open('app/assets/images/paak.jpg'))
 malibu = Album.create!(name: 'Malibu', artist_id: paak.id, image: File.open('app/assets/images/malibu.jpg'))
