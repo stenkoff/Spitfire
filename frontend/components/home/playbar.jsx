@@ -15,7 +15,7 @@ class PlayBar extends React.Component {
     this.progressTime = this.progressTime.bind(this);
     this.progressBar = this.progressBar.bind(this);
     this.progress = this.progress.bind(this);
-    this.nowPlaying = this.nowPlaying.bind(this);
+    // this.nowPlaying = this.nowPlaying.bind(this);
     this.volume = this.volume.bind(this);
     this.volumeProgress = this.volumeProgress.bind(this);
     this.startPlay = this.startPlay.bind(this);
@@ -42,7 +42,7 @@ class PlayBar extends React.Component {
   duration() {
     if (this.music) {
       if (!this.music.duration) {
-        return '0:00'
+        return null;
       }
       let time = this.music.duration
       let min = Math.floor(time / 60)
@@ -91,11 +91,12 @@ class PlayBar extends React.Component {
   }
 
   skip() {
-    if (this.state.nowPlaying < this.props.queue.length) {
+    if (this.state.nowPlaying + 1 < this.props.queue.length) {
       this.setState({ nowPlaying: this.state.nowPlaying + 1 })
-    } else {
-      this.setState({ nowPlaying: 0, play: false, progress: 0})
     }
+    // } else {
+    //   this.setState({ nowPlaying: 0, play: false, progress: 0})
+    // }
   }
 
   previous() {
@@ -105,13 +106,14 @@ class PlayBar extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.queue.lenth > 0) {
+    if (nextProps.queue.length > 0) {
+
       this.setState({ play: true, nowPlaying: 0 })
     }
   }
 
   componentDidMount() {
-    if (this.props.queue.lenth > 0) {
+    if (this.props.queue.length > 0) {
       this.setState({ play: true, nowPlaying: 0 })
     }
   }
@@ -145,23 +147,23 @@ class PlayBar extends React.Component {
     return ( <div className='progress' style={barStyle}></div> );
   }
 
-  nowPlaying() {
-    if (this.music) {
-      let track = this.props.queue[this.state.nowPlaying]
-      return (
-        <div className='now-playing'>
-          <img className = 'album-art'
-            src={this.props.albums[track.album_id].image_url}/>
-          <div className='now-info'>
-            <div className='now-title'>{track.title}</div>
-            <div className='now-artist'>{track.artist}</div>
-          </div>
-        </div>
-      );
-    } else {
-      return null;
-    }
-  }
+  // nowPlaying() {
+  //   if (this.music) {
+  //     let track = this.props.queue[this.state.nowPlaying]
+  //     return (
+  //       <div className='now-playing'>
+  //         <img className = 'album-art'
+  //           src={track.image_url}/>
+  //         <div className='now-info'>
+  //           <div className='now-title'>{track.title}</div>
+  //           <div className='now-artist'>{track.artist}</div>
+  //         </div>
+  //       </div>
+  //     );
+  //   } else {
+  //     return null;
+  //   }
+  // }
 
   volume(e) {
     let progress = e.nativeEvent.offsetX;
@@ -193,7 +195,6 @@ class PlayBar extends React.Component {
           <section className='pb-container'>
             <section className='playbar-items'>
           <div className='playbar-left'>
-            <div>{this.nowPlaying()}</div>
             <div>{}</div>
           </div>
           <div className='playbar-middle'>

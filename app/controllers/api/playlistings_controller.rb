@@ -3,7 +3,8 @@ class Api::PlaylistingsController < ApplicationController
   def create
     @playlisting = Playlisting.new(playlisting_params)
     @playlist = Playlist.find(@playlisting.playlist_id)
-    if Playlisting.all.length > 0
+    if Playlisting.all.
+      gth > 0
       @playlisting.ord = Playlisting.last.ord + 1
     else
       @playlisting.ord = 1
