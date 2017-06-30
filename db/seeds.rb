@@ -109,7 +109,7 @@ moon = Album.create!(name: 'Man On The Moon', artist_id: cudi.id, image: File.op
 Track.create!(title: 'Up Up & Away', album_id: 29, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/265/original/up_up_and_away.mp3")
 Track.create!(title: 'Pursuit of Happiness (Nightmare)', album_id: 29, ord: 2, audio:  "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/265/original/up_up_and_away.mp3")
 
-future = Artist.create!(name: 'Future', image: File.open('/Users/shenkoff/Desktop/fullstack/Spitfire/app/assets/images/future2.jpg'))
+future = Artist.create!(name: 'Future', image: File.open('app/assets/images/future2.jpg'))
 mask = Album.create!(name: 'FUTURE', artist_id: future.id, image: File.open('app/assets/images/FUTURE.png'))
 Track.create!(title: 'Mask Off', album_id: mask.id, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/267/original/07_Mask_Off.mp3")
 evol = Album.create!(name: 'EVOL', artist_id: future.id, image: File.open('app/assets/images/evol.png'))
