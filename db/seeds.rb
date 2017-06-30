@@ -89,7 +89,7 @@ Track.create!(title: 'LOVE. (FEAT. ZACARI.)', album_id: damn.id, ord: 10, audio:
 Track.create!(title: 'XXX. (FEAT. U2.)', album_id: damn.id, ord: 11, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/256/original/11_XXX._%28FEAT._U2.%29.mp3")
 Track.create!(title: 'FEAR.', album_id: damn.id, ord: 12, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/257/original/12_FEAR..mp3")
 Track.create!(title: 'GOD.', album_id: damn.id, ord: 13, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/258/original/13_GOD..mp3")
-Track.create!(title: 'DUCKWORTH.', album_id: damn.id, ord: 14, "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/259/original/14_DUCKWORTH..mp3")
+Track.create!(title: 'DUCKWORTH.', album_id: damn.id, ord: 14, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/259/original/14_DUCKWORTH..mp3")
 
 outkast = Artist.create!(name: 'Outkast', image: File.open('app/assets/images/outkast.jpg'))
 stankonia = Album.create!(name: 'stankonia', artist_id: outkast.id, image: File.open('app/assets/images/stankonia.png'))
