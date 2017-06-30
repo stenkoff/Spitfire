@@ -8,6 +8,8 @@ import { receiveSong, receiveSongs } from '../../../actions/audio_actions';
 class ArtistShow extends React.Component {
   constructor(props) {
     super(props);
+    this.playTrack = this.playTrack.bind(this);
+    this.playTracks = this.playTracks.bind(this);
   }
 
   componentDidMount() {

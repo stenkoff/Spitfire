@@ -145,7 +145,6 @@ class PlayBar extends React.Component {
   }
 
   nowPlaying() {
-    debugger
     if (this.music) {
       let track = this.props.queue[this.state.nowPlaying]
       return (

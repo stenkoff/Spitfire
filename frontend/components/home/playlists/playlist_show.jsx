@@ -49,8 +49,10 @@ class PlaylistShow extends React.Component {
   }
 
   playTracks(e) {
+    return (e) => {
       e.preventDefault();
       this.props.playTracks(this.props.tracks);
+    }
   }
 
   render() {
