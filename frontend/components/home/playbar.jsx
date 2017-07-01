@@ -1,11 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { skip } from '../../actions/audio_actions';
+import { Link } from 'react-router-dom';
+// import { skip } from '../../actions/audio_actions';
 
 class PlayBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { play: false, nowPlaying: 0, progress: 0, track: null, volume: 100 };
+    this.state = {play: false, nowPlaying: 0, progress: 0, track: null, volume: 100};
     this.togglePlay = this.togglePlay.bind(this);
     this.audioPlayer = this.audioPlayer.bind(this);
     this.duration = this.duration.bind(this);
@@ -15,7 +16,7 @@ class PlayBar extends React.Component {
     this.progressTime = this.progressTime.bind(this);
     this.progressBar = this.progressBar.bind(this);
     this.progress = this.progress.bind(this);
-    // this.nowPlaying = this.nowPlaying.bind(this);
+    this.nowPlaying = this.nowPlaying.bind(this);
     this.volume = this.volume.bind(this);
     this.volumeProgress = this.volumeProgress.bind(this);
     this.startPlay = this.startPlay.bind(this);
@@ -107,7 +108,6 @@ class PlayBar extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.queue.length > 0) {
-
       this.setState({ play: true, nowPlaying: 0 })
     }
   }
@@ -147,23 +147,25 @@ class PlayBar extends React.Component {
     return ( <div className='progress' style={barStyle}></div> );
   }
 
-  // nowPlaying() {
-  //   if (this.music) {
-  //     let track = this.props.queue[this.state.nowPlaying]
-  //     return (
-  //       <div className='now-playing'>
-  //         <img className = 'album-art'
-  //           src={track.image_url}/>
-  //         <div className='now-info'>
-  //           <div className='now-title'>{track.title}</div>
-  //           <div className='now-artist'>{track.artist}</div>
-  //         </div>
-  //       </div>
-  //     );
-  //   } else {
-  //     return null;
-  //   }
-  // }
+  nowPlaying() {
+    if (this.music) {
+      let track = this.props.queue[this.state.nowPlaying]
+      return (
+        <div className='now-playing'>
+          <img className = 'album-art'
+            src={track.image_url}/>
+          <div className='now-info'>
+            <div className='now-title'>{track.title}</div>
+            <div className='now-artist'>
+              {track.artist}
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  }
 
   volume(e) {
     let progress = e.nativeEvent.offsetX;
@@ -189,13 +191,12 @@ class PlayBar extends React.Component {
     <div id='pause'><i onClick={this.togglePlay}
       className="fa fa fa-pause"
       aria-hidden="true"></i></div> : <div onClick={this.togglePlay} id='play'>▶︎</div>;
-
       return (
         <section className='playbar'>
           <section className='pb-container'>
             <section className='playbar-items'>
           <div className='playbar-left'>
-            <div>{}</div>
+            <div>{this.nowPlaying()}</div>
           </div>
           <div className='playbar-middle'>
 
@@ -243,10 +244,10 @@ class PlayBar extends React.Component {
 }
 
 
-const mapStateToProps = ({queue, albums}) => {
+const mapStateToProps = ({queue}) => {
   return {
     queue,
-    albums
+    album: ''
   };
 };
 // const mapDispatchToProps = dispatch => {

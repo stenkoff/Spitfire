@@ -38,7 +38,6 @@ class AlbumShow extends React.Component {
   }
 
   render() {
-    //
 
     if (this.props.tracks && this.props.album.name) {
       let length = this.props.tracks.length;

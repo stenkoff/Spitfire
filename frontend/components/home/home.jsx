@@ -42,6 +42,7 @@ class Home extends React.Component   {
           </div>
 
           <Switch>
+            <ProtectedRoute exact path='/' component={MusicNav}/>
             <ProtectedRoute exact path='/playlists' component={MusicNav}/>
             <ProtectedRoute exact path='/artists' component={MusicNav}/>
             <ProtectedRoute exact path='/albums' component={MusicNav}/>
@@ -52,7 +53,7 @@ class Home extends React.Component   {
           </Switch>
 
         </div>
-        <PlayBar />
+        <ProtectedRoute path="/" component={PlayBar} />
       </section>
 
       );
