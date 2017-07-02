@@ -48,6 +48,7 @@ class AddTrack extends React.Component {
   }
 
   openModal() {
+    window.scrollTo(0,0)
     this.setState({ modal: true });
   }
 

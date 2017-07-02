@@ -7,6 +7,7 @@
   background-color: transparent;
   width: 100%;
   justify-content: center;
+  min-height: 415px;
 }
 .new-playlist-form h1 {
   font-size: 54px;
@@ -76,40 +77,40 @@
   box-shadow: inset 0 0 0 2px #a0a0a0;
 
 }
+//
+// #close-button {
+//   background-color: transparent;
+//   cursor: pointer;
+//   height: 32px;
+//   width: 32px;
+//   color: white;
+//   padding: 0;
+//   font-size: 70px;
+//   text-align: center;
+//   vertical-align: middle;
+//   margin-bottom: 40px;
+// }
 
-#close-button {
-  background-color: transparent;
-  cursor: pointer;
-  height: 32px;
-  width: 32px;
-  color: white;
-  padding: 0;
-  font-size: 70px;
-  text-align: center;
-  vertical-align: middle;
-  margin-bottom: 40px;
-}
 
+// #m3, #m4 {
+//   height: 45px;
+//   width: 165px;
+//   font-size: 16px;
+//   border-radius: 35px;
+//   padding: 13px 44px;
+//   line-height: 1.3;
+//   vertical-align: middle;
+//   cursor: pointer;
+//   margin-left: 10px;
+//   margin-right: 10px;
+// }
 
-#m3, #m4 {
-  height: 45px;
-  width: 165px;
-  font-size: 16px;
-  border-radius: 35px;
-  padding: 13px 44px;
-  line-height: 1.3;
-  vertical-align: middle;
-  cursor: pointer;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-#m3 {
-  background: hsla(0,0%,9%,.7);
-  color: #fff;
-  box-shadow: inset 0 0 0 2px #a0a0a0;
-  left: 550px;
-}
+// #m3 {
+//   background: hsla(0,0%,9%,.7);
+//   color: #fff;
+//   box-shadow: inset 0 0 0 2px #a0a0a0;
+//   left: 550px;
+// }
 
 #close-button2 {
   background-color: transparent;
@@ -133,22 +134,22 @@
   justify-content: center;
   min-width: 500px;
 }
-.modal-buttons2 {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  padding-left: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.mod-buttons2 {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  padding-left: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+// .modal-buttons2 {
+//   padding-top: 40px;
+//   padding-bottom: 40px;
+//   padding-left: 10px;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+// }
+// .mod-buttons2 {
+//   padding-top: 40px;
+//   padding-bottom: 40px;
+//   padding-left: 10px;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+// }
 
 .new-playlist-top {
   display: flex;

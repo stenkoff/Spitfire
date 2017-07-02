@@ -33,9 +33,9 @@ class Playlists extends React.Component {
       							placeholder='Start typing...'
       							value={this.state.name} />
                 </label>
-      					<div className='modal-buttons2' >
-                  <button id='m3' onClick={() => this.closeModal()}>CANCEL</button>
-      	          <button id='m4' onClick={e => this.handleSubmit(e)}>CREATE</button>
+      					<div className='modal-buttons' >
+                  <button id='m1' onClick={() => this.closeModal()}>CANCEL</button>
+      	          <button id='m2' onClick={e => this.handleSubmit(e)}>CREATE</button>
       					</div>
             </Modal>
           </div>

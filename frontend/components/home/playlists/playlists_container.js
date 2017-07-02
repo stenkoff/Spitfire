@@ -6,8 +6,9 @@ import { createPlaylist } from '../../../actions/playlist_actions'
 
 const mapStateToProps = (state, ownProps) => {
   const user = state.session.currentUser;
+  const playlist_ids = Object.keys(state.playlists)
   return {
-    playlists: user.playlist_ids.map(id => state.playlists[id]),
+    playlists: playlist_ids.map(id => state.playlists[id]),
     user: state.session.currentUser
   };
 };

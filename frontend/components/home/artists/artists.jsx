@@ -30,7 +30,7 @@ class Artists extends React.Component {
         <div className='new-playlist'>
           <button onClick={()=>this.openModal()}>NEW PLAYLIST</button>
           <Modal className='new-playlist-form' isOpen={this.state.modal} onClose={() => this.closeModal()}>
-              <button id='close-button' onClick={() => this.closeModal()}>×</button>
+              <button id='close-button2' onClick={() => this.closeModal()}>✕</button>
               <h1>Create new playlist</h1>
               <label className='new-playlist-name'>
                 <input
