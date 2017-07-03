@@ -14,10 +14,9 @@ class Search extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.playTrack = this.playTrack.bind(this);
   }
-  //
+
   handleChange() {
     return e => {
-      // this.setState({ ['search']: })
       this.setState({['search']: e.currentTarget.value})
       this.props.fetchSearch(e.currentTarget.value)
     }
@@ -33,12 +32,6 @@ class Search extends React.Component {
       this.props.playTrack(track);
     }
   }
-  // componentWillReceiveProps(nextProps) {
-  //   debugger
-  //   if (this.props.results.albums != nextProps.results.albums) {
-  //     this.props.fetchSearch();
-  //   }
-  // }
 
   render() {
     let playlists = []
@@ -150,18 +143,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps)
   (Search);
-
-
-
-  // if (this.props.results.playlists) {
-  //   let playlists = this.props.results.playlists
-  //   let albums = this.props.results.albums
-  //   let artists = this.props.results.artists
-  //   let tracks = this.props.results.tracks
-  //   return (
-  //     <PlaylistResults playlists={playlists}/>
-  //   );
-  //   else {
-  //     return null;
-  //   }
   // }

@@ -22,7 +22,7 @@ const MusicNav = () => {
     </ul>
   </section>
     <Switch>
-      <ProtectedRoute exact path='/' component={PlaylistsContainer}/>
+      {/* <ProtectedRoute exact path='/' component={PlaylistsContainer}/> */}
       <ProtectedRoute exact path='/playlists' component={PlaylistsContainer}/>
       <ProtectedRoute exact path='/albums' component={Albums} />
       <ProtectedRoute exact path='/artists' component={Artists} />

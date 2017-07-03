@@ -10,11 +10,11 @@ export const receiveArtist = ({artist, tracks}) => {
   }
 };
 
-export const receiveArtists = ({artists, tracks}) => {
+export const receiveArtists = ({artists, albums}) => {
   return {
     type: RECEIVE_ARTISTS,
     artists,
-    tracks
+    albums
   }
 };
 

@@ -1,5 +1,14 @@
 
+.browse-artists {
+  color: white;
+  // padding-top: 10px;
+  font-size: 24px;
+  text-align: center;
+}
 
+.music-nav-active {
+  color: white;
+}
 .home {
    min-height:100%;
    position: relative;
@@ -89,11 +98,19 @@
 }
 
 
-#music a {
+#music {
   margin-bottom: 19px;
   color: #a0a0a0;
   text-decoration: none;
   width: 100%;
+}
+
+#music a, #browse a {
+  width: 100%;
+  display: flex;
+  &:hover {
+    color: white;
+  }
 }
 
 .green {

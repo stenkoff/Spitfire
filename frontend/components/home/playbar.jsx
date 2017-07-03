@@ -61,7 +61,6 @@ class PlayBar extends React.Component {
       const audioplayer = <audio
           autoPlay
           onTimeUpdate={this.progress}
-          // src={this.props.queue[i].audio}
           onPlay={this.startPlay}
           src={this.props.queue[this.state.nowPlaying].audio}
           ref={(el)=> { this.music = el; }}
@@ -75,10 +74,10 @@ class PlayBar extends React.Component {
 
   currentTime() {
     if (this.music) {
-    return (this.music.currentTime / this.music.duration * 100)
-  } else {
-    return null
-  }
+      return (this.music.currentTime / this.music.duration * 100)
+    } else {
+      return null
+    }
   }
 
   progressTime() {
@@ -95,9 +94,6 @@ class PlayBar extends React.Component {
     if (this.state.nowPlaying + 1 < this.props.queue.length) {
       this.setState({ nowPlaying: this.state.nowPlaying + 1 })
     }
-    // } else {
-    //   this.setState({ nowPlaying: 0, play: false, progress: 0})
-    // }
   }
 
   previous() {
@@ -141,8 +137,6 @@ class PlayBar extends React.Component {
     }
     let barStyle = {
       width: `${progress}%`,
-      // border: '2px solid #1db954',
-      // bottom: '10px'
     }
     return ( <div className='progress' style={barStyle}></div> );
   }
@@ -180,7 +174,7 @@ class PlayBar extends React.Component {
       width: `${this.state.volume}px`,
     }
     return (
-        <div style={volStyle} className='vol-progress'></div>
+      <div style={volStyle} className='vol-progress'></div>
     );
   }
 
@@ -188,58 +182,51 @@ class PlayBar extends React.Component {
     // let playbtn = (this.state.play===true) ? "fa fa fa-pause" : "fa fa-2x fa-play-circle-o";
     let duration = this.duration();
     let playbtn = (this.state.play===true) ?
-    <div id='pause'><i onClick={this.togglePlay}
-      className="fa fa fa-pause"
-      aria-hidden="true"></i></div> : <div onClick={this.togglePlay} id='play'>▶︎</div>;
-      return (
-        <section className='playbar'>
-          <section className='pb-container'>
-            <section className='playbar-items'>
-          <div className='playbar-left'>
-            <div>{this.nowPlaying()}</div>
-          </div>
-          <div className='playbar-middle'>
+      <div id='pause'><i onClick={this.togglePlay}
+        className="fa fa fa-pause"
+        aria-hidden="true"></i></div> : <div onClick={this.togglePlay} id='play'>▶︎</div>;
+    return (
+      <section className='playbar'>
+        <section className='pb-container'>
+          <section className='playbar-items'>
 
-            <div className='controls'>
+            <div className='playbar-left'>
+              <div>{this.nowPlaying()}</div>
+            </div>
 
-              {this.audioPlayer()}
-
-              <div><i onClick={this.previous}
-                id='previous'
-                className="fa fa-step-backward"
-                aria-hidden="true"></i></div>
-
+            <div className='playbar-middle'>
+              <div className='controls'>
+                {this.audioPlayer()}
+                <div><i onClick={this.previous}
+                  id='previous'
+                  className="fa fa-step-backward"
+                  aria-hidden="true"></i>
+                </div>
                 {playbtn}
-
-              <div><i onClick={this.skip}
-                id='skip'
-                className="fa fa-step-forward"
-                aria-hidden="true"></i></div>
+                <div><i onClick={this.skip}
+                  id='skip'
+                  className="fa fa-step-forward"
+                  aria-hidden="true"></i>
+                </div>
+              </div>
+              <div className='playbar-bottom'>
+                <div className='progress-time'>{this.progressTime()}</div>
+                <div className='progress-bar'>{this.progressBar()}</div>
+                <div className='duration'>{this.duration()}</div>
+              </div>
             </div>
 
-            <div className='playbar-bottom'>
-              <div className='progress-time'>{this.progressTime()}</div>
-              <div className='progress-bar'>{this.progressBar()}</div>
-              <div className='duration'>{this.duration()}</div>
-            </div>
-
-          </div>
-          <div className='playbar-right'>
-            <div className='vol-controls'>
-
-              <div className='vol-icon'><i className="fa fa-volume-down" aria-hidden="true"></i></div>
-
+            <div className='playbar-right'>
+              <div className='vol-controls'>
+                <div className='vol-icon'><i className="fa fa-volume-down" aria-hidden="true"></i></div>
                 <div onClick={(e) => this.volume(e)} className='vol-bar'>{this.volumeProgress()}<p className='slider'>⬤</p></div>
-
-
+              </div>
             </div>
-          </div>
           </section>
-
+        </section>
       </section>
-      </section>
-        );
-    }
+    );
+  }
 
 }
 
