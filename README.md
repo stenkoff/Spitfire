@@ -7,7 +7,7 @@ Spitfire is a full stack music-streaming application inspired by the popular web
 ## Asynchronous Music Playback
 ![alt text](../app/assets/images/playbar.png)
 
-Users can play music continuously while navigating throughout the site. Continuous playback is achieved by making the audioplayer a top level component, so as users browse the site, the audioplayer is rendered on every page and the stream of music is never disrupted. The audioplayer displays the progress of the current song by setting the width of the bar equal to percentage of song's progress. This progress is calculated using the current time of the song and the total duration of the song. Users can play a single song or add a multiple songs to a queue, and can navigate forward and backwards through the queue. Additionally, users can adjust the volume of the audioplayer by clicking on the volume bar.
+Users can play music continuously while navigating throughout the site. Continuous playback is achieved by making the audioplayer a top level component, so as users browse the site, the audioplayer is rendered on every page and the stream of music is never disrupted. The audioplayer displays the progress of the current song by setting the width of the bar equal to percentage of song's progress. This progress is calculated using the current time of the song and the total duration of the song. Users can play a single song or add multiple songs to a queue, and they can navigate forward and backwards through the queue. Additionally, users can adjust the volume of the audioplayer by clicking on the volume bar.
 
 ## Search
 ![alt text](../app/assets/images/search.png)
