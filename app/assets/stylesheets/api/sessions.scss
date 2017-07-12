@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@font-face {
+  font-family: 'ProximaNova';
+  src: asset-url('ProximaNova-Regular.otf');
+}
+
+@font-face {
+  font-family: 'ProximaNova-Light';
+  src: asset-url('ProximaNova-Light.otf');
+}
+
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  src: asset-url('ProximaNova-Bold.otf');
+}
+
 h1, h2, h3, p, label, input, div, section, ul, li, input:focus, button {
   margin: 0;
   border: 0;
@@ -11,7 +26,7 @@ h1, h2, h3, p, label, input, div, section, ul, li, input:focus, button {
 .sess {
   display: flex;
   color: white;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'ProximaNova', sans-serif;
   background-color: black;
   padding: 13%;
   margin: auto;
@@ -86,7 +101,7 @@ div.formItem {
   border-radius: 20px;
   padding: 3%;
   vertical-align: center;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'ProximaNova', sans-serif;
   font-size: 14px;
 }
 
@@ -117,7 +132,7 @@ div.formItem {
 
 a.newSession {
   color: white;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'ProximaNova', sans-serif;
   font-size: 12px;
   margin: auto;
   margin-top: 20px;
