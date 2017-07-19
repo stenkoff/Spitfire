@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchPlaylist, removeTrack } from '../../../actions/playlist_actions';
+import { fetchPlaylist, removeTrack, deletePlaylist } from '../../../actions/playlist_actions';
 import AddTrack from './add_track';
 import { receiveSong, receiveSongs } from '../../../actions/audio_actions';
 

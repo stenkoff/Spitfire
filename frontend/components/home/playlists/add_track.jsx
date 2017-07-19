@@ -16,6 +16,12 @@ class AddTrack extends React.Component {
     this.openModal = this.openModal.bind(this);
   }
 
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.match.params.id != this.props.playlist.id) {
+  //     this.props.fetchPlaylist(nextProps.match.params.id)
+  //   }
+  // }
+
   render() {
     const playlists = this.props.playlists
     return (
@@ -71,7 +77,8 @@ class AddTrack extends React.Component {
 
 
 const mapStateToProps = state => {
-  const ids = state.session.currentUser.playlist_ids;
+  // const ids = state.session.currentUser.playlist_ids;
+  const ids = Object.keys(state.playlists)
   return {
     playlists: ids.map(id => state.playlists[id]),
     addTrack: playlisting => addTrack(playlisting)
