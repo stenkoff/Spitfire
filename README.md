@@ -1,5 +1,5 @@
 # Spitfire
-[Live!](http://spitfired/herokuapp.com)
+[Live!](http://spitfired.herokuapp.com)
 
 Spitfire is a full stack music-streaming application inspired by the popular web application, Spotify. Spitfire implements Ruby on Rails backend, PostgreSQL database and React/Redux on the frontend.
 
