@@ -48,7 +48,7 @@ Track.create!(title: 'u', album_id: tpab.id, ord: 6, audio: "http://s3.amazonaws
 Track.create!(title: 'Alright', album_id: tpab.id, ord: 7, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/310/original/07_-_Alright.mp3")
 Track.create!(title: 'For Sale_ (Interlude)', album_id: tpab.id, ord: 8, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/311/original/08_-_For_Sale__%28Interlude%29.mp3")
 Track.create!(title: 'Momma', album_id: tpab.id, ord: 9, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/312/original/09_-_Momma.mp3")
-Track.create!(title: 'Hood Politics', album_id: tpab.id, ord: 10, audio: File.open("app/assets/tracks/To Pimp A Butterfly/10 - Hood Politics.mp3"))
+Track.create!(title: 'Hood Politics', album_id: tpab.id, ord: 10, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/353/original/10_-_Hood_Politics.mp3")
 Track.create!(title: 'How Much A Dollar Cost', album_id: tpab.id, ord: 11, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/313/original/10_-_Hood_Politics.mp3")
 Track.create!(title: 'Complexion (A Zulu Love)', album_id: tpab.id, ord: 12, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/314/original/12_-_Complexion_%28A_Zulu_Love%29.mp3")
 Track.create!(title: 'The Blacker the Berry', album_id: tpab.id, ord: 13, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/315/original/13_-_The_Blacker_the_Berry.mp3")
