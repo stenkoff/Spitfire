@@ -24,7 +24,7 @@ Playlisting.destroy_all
 chance = Artist.create!(name: 'Chance the Rapper', image: File.open('app/assets/images/chance.png'))
 cb = Album.create!(name: 'Coloring Book', artist_id: chance.id, image: File.open('app/assets/images/chance.png'))
 Track.create!(title: 'All We Got', album_id: cb.id, ord: 1, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/351/original/01_All_We_Got_%28feat._Kanye_West___Chicago_Children's_Choir%29.m4a")
-Track.create!(title: 'No Problem', album_id: cb.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios//original/02_No_Problem_%28feat._Lil_Wayne___2_Chainz%29.m4a?1500521812")
+Track.create!(title: 'No Problem', album_id: cb.id, ord: 2, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/352/original/02_No_Problem_%28feat._Lil_Wayne___2_Chainz%29.m4a")
 Track.create!(title: 'Summer Friends', album_id: cb.id, ord: 3, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/294/original/03_Summer_Friends_%28feat._Jeremih___Francis___The_Lights%29.m4a")
 Track.create!(title: 'D.R.A.M. Sings Special', album_id: cb.id, ord: 4, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/295/original/04_D.R.A.M._Sings_Special.m4a")
 Track.create!(title: 'Blessings', album_id: cb.id, ord: 5, audio: "http://s3.amazonaws.com/spitfire-dev/tracks/audios/000/000/296/original/05_Blessings.m4a")
