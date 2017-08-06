@@ -43,6 +43,7 @@ class Home extends React.Component   {
               <div>
                 <button  className='bottom' onClick={this.props.logout}>Logout</button>
               </div>
+              <div id='disclaimer' className='bottom'>For creative purposes only</div>
             </section>
           </div>
 
