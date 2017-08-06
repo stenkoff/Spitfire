@@ -15,5 +15,7 @@ Users can play music continuously while navigating throughout the site. Continuo
 
 Users can search for playlists, artists, albums and songs. Search results are displayed and updated immediately, as a user types. On every keystroke, an onChange event handler sends an API request to the backend, which uses an ActiveRecord query to check the database for case-insensitive matches in any of the four categories, and immediately returns the results to the frontend.
 
+![alt text](./app/assets/images/search_input.png)
+![alt text](./app/assets/images/handle_change.png)
 <!-- Playlist Creation
 Users can create playlists, which are displayed in their music. They can add or remove tracks from the playlists, or delete the playlist entirely. -->
