@@ -59,6 +59,14 @@ class PlaylistShow extends React.Component {
     if (this.props.tracks && this.props.playlist.name) {
       let length = this.props.tracks.length;
       let songs = length === 1 ? `${length} SONG` : `${length} SONGS`;
+      let deleteButton;
+      if (this.props.currentUser.id === this.props.playlist.user_id) {
+        deleteButton = <button
+          className='delete-playlist'
+          onClick={(e) => this.deletePlaylist(e)}>DELETE</button>
+      } else {
+        deleteButton = null;
+      }
       return (
       <section className='pl'>
 
@@ -75,9 +83,7 @@ class PlaylistShow extends React.Component {
             <button
               className='play-tracks-btn'
               onClick={this.playTracks}>PLAY</button>
-            <button
-              className='delete-playlist'
-              onClick={(e) => this.deletePlaylist(e)}>DELETE</button>
+              {deleteButton}
           </div>
       </div>
 
@@ -123,6 +129,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     playlist: playlist,
     tracks: tracks,
+    currentUser: state.session.currentUser
   };
 };
 
