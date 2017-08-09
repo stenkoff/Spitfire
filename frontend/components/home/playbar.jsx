@@ -17,6 +17,7 @@ class PlayBar extends React.Component {
     this.progressBar = this.progressBar.bind(this);
     this.progress = this.progress.bind(this);
     this.nowPlaying = this.nowPlaying.bind(this);
+    this.visitArtist = this.visitArtist.bind(this);
     this.volume = this.volume.bind(this);
     this.volumeProgress = this.volumeProgress.bind(this);
     this.startPlay = this.startPlay.bind(this);
@@ -40,6 +41,7 @@ class PlayBar extends React.Component {
   startPlay() {
     this.setState({ play: true })
   }
+
   duration() {
     if (this.music) {
       if (!this.music.duration) {
@@ -150,7 +152,7 @@ class PlayBar extends React.Component {
             src={track.image_url}/>
           <div className='now-info'>
             <div className='now-title'>{track.title}</div>
-            <div className='now-artist'>
+            <div onClick={this.visitArtist} className='now-artist'>
               {track.artist}
             </div>
           </div>
@@ -159,6 +161,12 @@ class PlayBar extends React.Component {
     } else {
       return null;
     }
+  }
+
+  visitArtist(e) {
+    e.preventDefault()
+    let track = this.props.queue[this.state.nowPlaying]
+    return this.props.history.push(`/artists/${track.artist_id}`)
   }
 
   volume(e) {
@@ -237,11 +245,6 @@ const mapStateToProps = ({queue}) => {
     album: ''
   };
 };
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     skip: () => dispatch(skip())
-//   };
-// };
 
 export default connect(
   mapStateToProps)
