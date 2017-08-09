@@ -25,7 +25,9 @@ class Home extends React.Component   {
           <div className='container'>
           <div className='sidebar'>
             <ul className='sidebar-top'>
-              <li id='logo'>Spitfire</li>
+              <li id='logo'>
+                <NavLink to='/browse'>Spitfire</NavLink>
+              </li>
               <li id = 'search'>
                 <NavLink to='/search' activeClassName='green'>Search<i className="fa fa-search" aria-hidden="true"></i></NavLink>
               </li>
