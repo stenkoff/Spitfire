@@ -113,6 +113,7 @@ class PlayBar extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.queue.length > 0) {
+      if (nextProps.queue === this.props.queue) return;
       this.setState({ play: true, nowPlaying: 0 })
     }
   }
@@ -171,7 +172,7 @@ class PlayBar extends React.Component {
   }
 
   visitArtist(e) {
-    e.preventDefault()
+    e.preventDefault();
     let track = this.props.queue[this.state.nowPlaying]
     return this.props.history.push(`/artists/${track.artist_id}`)
   }
