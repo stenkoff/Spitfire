@@ -93,8 +93,15 @@ class PlayBar extends React.Component {
   }
 
   skip() {
-    if (this.state.nowPlaying + 1 < this.props.queue.length) {
-      this.setState({ nowPlaying: this.state.nowPlaying + 1 })
+    if (this.music) {
+      if (this.state.nowPlaying + 1 < this.props.queue.length) {
+        this.setState({ nowPlaying: this.state.nowPlaying + 1 });
+      }
+      else {
+        this.music.pause()
+        this.setState({ play: false});
+        this.music.currentTime = 0
+      }
     }
   }
 
