@@ -38,6 +38,7 @@
 .playbar-left {
   width: 30%;
   min-width: 180px;
+  margin-right: 50px;
   // margin-right: 1px;
 }
 
@@ -206,6 +207,7 @@ flex-wrap: nowrap;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin-left: 50px;
   // vertical-align: middle;
   // align-content: center;
 }
