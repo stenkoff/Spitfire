@@ -5,17 +5,10 @@ class User < ActiveRecord::Base
 	validates :password, length: {minimum: 6}, allow_nil: :true
   after_initialize :ensure_session_token
 
-
-  has_many :playlists #user_follows
+  has_many :playlists
   has_many :tracks, through: :playlists
   has_many :albums, through: :tracks;
   has_many :artists, through: :tracks
-  # has_many user_follows, playlist_follows, artist_follows, album_follows
-  # user
-  # playlist
-  # playlisting
-  # tracks
-  # albums
 
 	def self.find_by_credentials(username, password)
 		user = User.find_by(username: username)
@@ -41,4 +34,5 @@ class User < ActiveRecord::Base
 	def ensure_session_token
 		self.session_token ||= SecureRandom::urlsafe_base64(16)
 	end
+  
 end
